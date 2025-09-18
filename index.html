@@ -2,364 +2,221 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>أكاديمية عايد | الدورة الشاملة لاختبار STEP</title>
-  <meta name="description" content="الدورة الشاملة لSTEP: شروحات، نماذج مكررة، خطط مذاكرة، تحديثات مستمرة، واشتراك مدى الحياة. التسجيل عبر منسق مبادرة حُلم على تيليجرام." />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الدورة الشاملة لاختبار STEP | مبادرة حُلم × أكاديمية عايد</title>
+  <meta name="description" content="كل ما يخص اختبار كفايات اللغة الإنجليزية STEP: شروحات، نماذج مكررة، خطط مذاكرة، وتحديثات مستمرة. التسجيل عبر منسق الدورة على تيليجرام.">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --primary:#0a4d8f;     /* أزرق فاخر */
-      --primary-2:#0f6ecb;   /* أزرق أفتح */
-      --gold:#c9a142;        /* ذهبي */
-      --bg:#f6f7fb;
-      --text:#1f2937;
-      --muted:#6b7280;
-      --ok:#10b981;
-      --warn:#f59e0b;
-      --err:#ef4444;
-      --card:#ffffff;
-      --shadow:0 10px 25px rgba(16,24,40,.08);
-      --radius:18px;
+      --bg:#0f172a;         /* slate-900 */
+      --card:#0b1024cc;     /* شفافية جميلة */
+      --muted:#94a3b8;      /* slate-400 */
+      --text:#e2e8f0;       /* slate-200 */
+      --brand:#22c55e;      /* green-500 */
+      --brand-2:#38bdf8;    /* sky-400 */
+      --accent:#f59e0b;     /* amber-500 */
+      --danger:#ef4444;     /* red-500 */
+      --ring: 0 0 0 4px #22c55e33;
     }
     *{box-sizing:border-box}
     body{
-      margin:0;
-      font-family:"Cairo",system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.75;
+      margin:0;background:
+      radial-gradient(1200px 600px at 120% -20%, #0ea5e933 0%, transparent 60%),
+      radial-gradient(1000px 500px at -20% 120%, #22c55e22 0%, transparent 60%),
+      var(--bg);
+      color:var(--text); font-family:"Cairo",system-ui,Segoe UI,Arial; line-height:1.8;
     }
-    a{color:var(--primary-2);text-decoration:none}
-    a:hover{opacity:.9}
-    .container{width:min(1120px,92%);margin-inline:auto}
-    /* Navbar */
-    .nav{
-      position:sticky;top:0;z-index:50;
-      background:linear-gradient(90deg,var(--primary) 0%, var(--primary-2) 100%);
-      color:#fff;
-      box-shadow:var(--shadow);
+    a{color:var(--brand-2); text-decoration:none}
+    a:hover{opacity:.85}
+    .container{max-width:1100px;margin-inline:auto;padding:20px}
+    header{
+      display:flex;gap:16px;align-items:center;justify-content:space-between;
+      padding:18px 0 6px 0;border-bottom:1px solid #1f2937;
     }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand img{width:56px;height:56px;border-radius:14px;border:2px solid rgba(255,255,255,.25);object-fit:contain;background:#fff}
-    .brand h1{font-size:20px;margin:0;font-weight:800;letter-spacing:.3px}
-    .cta-top a{
-      display:inline-block;background:linear-gradient(90deg,var(--gold),#f5d37a);
-      color:#1e232b;padding:10px 16px;border-radius:12px;font-weight:800;
-      border:1px solid rgba(0,0,0,.06)
+    .brand{
+      display:flex;align-items:center;gap:12px;
     }
-    /* Hero */
-    .hero{
-      background:
-        radial-gradient(1200px 380px at 80% -80%, rgba(201,161,66,.15), transparent 60%),
-        linear-gradient(180deg,#f7f9ff 0%, #eef3fb 100%);
-      padding:40px 0 24px;
-      border-bottom:1px solid #e6ecf5;
+    .brand .logo{
+      width:48px;height:48px;border-radius:14px;
+      background:linear-gradient(135deg,#22c55e,#0ea5e9);
+      display:grid;place-items:center;font-weight:800;color:#0b1024; box-shadow:0 8px 30px #0006;
     }
-    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
-    .badge{
-      display:inline-flex;gap:10px;align-items:center;
-      background:#fff;border:1px dashed var(--gold);color:#805b12;
-      padding:8px 12px;border-radius:999px;font-weight:700;box-shadow:var(--shadow)
-    }
-    .hero h2{margin:14px 0 10px;font-size:34px;font-weight:900;color:#0b2a4a}
-    .hero p.lead{color:#374151;font-size:18px;margin:8px 0 16px}
-    .hero .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .brand h1{font-size:18px;margin:0}
+    .chip{padding:.25rem .6rem;border:1px solid #1f2937;border-radius:999px;color:var(--muted);font-size:12px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      padding:12px 18px;border-radius:14px;font-weight:800;border:1px solid transparent
+      display:inline-flex;align-items:center;gap:8px;justify-content:center;
+      padding:12px 16px;border-radius:12px;border:1px solid #1f2937;
+      background:#0b1024;color:var(--text);font-weight:700;cursor:pointer;
+      transition:.2s; box-shadow:0 8px 35px #0005;
     }
-    .btn-primary{background:linear-gradient(90deg,var(--primary),var(--primary-2));color:#fff;box-shadow:var(--shadow)}
-    .btn-ghost{background:#fff;color:var(--primary);border-color:#e5e7eb}
-    .trust{display:flex;gap:14px;align-items:center;color:var(--muted);margin-top:10px;font-size:14px}
-    .hero-card{
-      background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:16px;border:1px solid #eef2f7
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),#16a34a); border-color:#16a34a}
+    .btn-outline{background:transparent}
+    .btn-warning{background:linear-gradient(135deg,#f59e0b,#ef4444); border-color:#f59e0b}
+    .hero{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:center;margin-top:24px;
     }
-    .hero-card h3{margin:0 0 10px;color:#0b2a4a}
-    .hero-list{margin:0;padding:0 0 0 18px}
-    /* Sections */
-    section{padding:30px 0}
-    .grid-2{display:grid;grid-template-columns:1fr 1fr; gap:18px}
     .card{
-      background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
-      padding:18px;border:1px solid #eef2f7
+      background:var(--card); border:1px solid #1f2937; border-radius:18px; padding:22px;
+      backdrop-filter: blur(6px);
     }
-    .sec-title{font-size:24px;margin:0 0 12px;color:#0b2a4a}
-    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .kpi{background:#fff;border:1px solid #eef2f7;border-radius:14px;padding:14px;text-align:center}
-    .kpi b{display:block;font-size:22px;color:var(--primary)}
-    ul.clean{margin:0;padding:0;list-style:none}
-    ul.clean li{padding:8px 0;border-bottom:1px dashed #eceff4}
-    .notice{background:#fff7ed;border:1px solid #ffedd5;color:#8a5200;border-radius:14px;padding:12px}
-    /* Form */
-    .form{display:grid;gap:12px}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    label{font-weight:700;font-size:14px;color:#0b2a4a}
-    input,select,textarea{
-      width:100%;padding:12px;border-radius:12px;border:1px solid #e5e7eb;background:#fff;font-family:inherit
+    h2{margin:0 0 10px 0;font-size:26px}
+    p.lead{color:#cbd5e1;margin:6px 0 14px;font-size:16px}
+    .badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+    .badge{background:#0b122c;border:1px solid #1f2937;color:#cbd5e1;padding:.35rem .6rem;border-radius:999px;font-size:12px}
+    .list{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+    .list li{display:flex;gap:10px;align-items:flex-start}
+    .ok{color:var(--brand)}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--brand)}
+    .divider{height:1px;background:#1f2937;margin:18px 0}
+    /* نموذج */
+    .form{display:grid;gap:10px}
+    .input, textarea{
+      width:100%;padding:12px 14px;border-radius:12px;border:1px solid #1f2937;background:#0b122c;color:var(--text);
+      outline:none; transition:.15s;
     }
-    .disclaimer{font-size:13px;color:var(--muted)}
-    .faq dt{font-weight:800;margin-top:8px}
-    .faq dd{margin:6px 0 12px}
-    /* Footer */
-    footer{background:#0b1a2b;color:#cbd5e1;padding:22px 0;margin-top:24px}
-    footer a{color:#7cc4ff}
-    .links{display:flex;gap:10px;flex-wrap:wrap}
-    .pill{
-      display:inline-flex;gap:8px;align-items:center;
-      background:#0f2744;color:#dbeafe;border:1px solid #133357;
-      padding:10px 12px;border-radius:999px
-    }
-    @media (max-width:900px){
-      .hero-grid,.grid-2{grid-template-columns:1fr}
-      .kpis{grid-template-columns:repeat(2,1fr)}
-      .row{grid-template-columns:1fr}
-      .brand h1{font-size:18px}
-    }
+    .input:focus, textarea:focus{box-shadow:var(--ring);border-color:#14532d}
+    .hint{font-size:12px;color:var(--muted)}
+    .pill{display:inline-block;background:#102040;border:1px dashed #1e293b;color:#9fb4d1;padding:.35rem .6rem;border-radius:999px;font-size:12px}
+    .grid{display:grid;gap:16px}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    footer{margin:28px 0 12px;color:#94a3b8;font-size:13px;text-align:center}
+    /* شريط عرض اليوم الوطني/الخصم */
+    .promo{display:flex;gap:10px;align-items:center;justify-content:center;margin:14px 0 0}
+    .promo .tag{background:#241200;border:1px solid #3f1d00;color:#ffd089;padding:.4rem .7rem;border-radius:10px;font-weight:700}
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="container nav-inner">
+  <div class="container">
+    <header>
       <div class="brand">
-        <!-- غيّر مسار الشعار إذا تبغى -->
-        <img src="https://i.ibb.co/6YJ8d7T/ayed-academy-logo.png" alt="شعار أكاديمية عايد">
-        <h1>أكاديمية عايد — الدورة الشاملة لSTEP</h1>
+        <div class="logo">ع</div>
+        <div>
+          <h1>أكاديمية عايد × مبادرة حُلم — دورة STEP الشاملة</h1>
+          <span class="chip">تحديثات مستمرة • اشتراك مدى الحياة</span>
+        </div>
       </div>
-      <div class="cta-top">
-        <a href="#apply">خصم اليوم الوطني — 100 ر.س فقط</a>
+      <div class="actions">
+        <a class="btn btn-outline" href="https://t.me/stepp2024" target="_blank">📣 قناة التليجرام العامة</a>
+        <a class="btn btn-primary" href="https://t.me/Hilm_STEP1" target="_blank">✈️ التسجيل عبر المنسق</a>
       </div>
-    </div>
-  </nav>
+    </header>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container hero-grid">
-      <div>
-        <span class="badge">🎉 خصم لفترة محدودة — تدفع مرة وحدة &nbsp;|&nbsp; اشتراك مدى الحياة</span>
-        <h2>كل ما تحتاجه لاجتياز <span style="color:var(--gold)">STEP</span> — بوضوح، ترتيب، وتحديثات مستمرة</h2>
+    <div class="promo">
+      <div class="tag">عرض خاص — 100 ر.س بدل 400 (لفترة محدودة)</div>
+    </div>
+
+    <section class="hero">
+      <!-- تعريف ومحتوى -->
+      <div class="card">
+        <h2>كل ما تحتاجه لاختبار STEP في مكان واحد</h2>
         <p class="lead">
-          شروحات مسجلة، ملفات PDF للطباعة، نماذج مكررة محلولة، كويزات تدريبية، وخطط مذاكرة تناسب وقتك. <b>الاشتراك عبر منسق مبادرة حُلم على تيليجرام فقط.</b>
+          شروحات واضحة، نماذج مكرّرة محلولة، خطط مذاكرة مرنة، وملفات مختصرة حتى لو باقي يوم على اختبارك. ادفع مرة وحدة—واستمتع بتحديثات مدى الحياة.
         </p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#apply">📩 سجّل الآن</a>
-          <a class="btn btn-ghost" href="#free">📂 جرّب المحتوى المجاني</a>
-          <a class="btn btn-ghost" href="#faq">❓ الأسئلة الشائعة</a>
+        <div class="badges">
+          <span class="badge">Grammar • Reading • Listening • Structure</span>
+          <span class="badge">نماذج عايد + الحسّاني</span>
+          <span class="badge">تحديثات فورية</span>
+          <span class="badge">دعم واستشارات</span>
         </div>
-        <div class="trust">
-          <span>✅ تحديثات مجانيّة مدى الحياة</span> •
-          <span>🛡️ روابط رسمية وموثّقة</span> •
-          <span>💬 دعم عبر المنسق</span>
-        </div>
-      </div>
-
-      <aside class="hero-card">
-        <h3>موجز سريع عن STEP</h3>
-        <ul class="hero-list">
-          <li>150 سؤال — MCQ — المدة 3 ساعات تقريبًا.</li>
-          <li>الأقسام: قراءة 40% • استماع 30% • قواعد/تراكيب 20% • تحليل كتابي 10%.</li>
-          <li>الدرجة من 100 — +70 ممتاز للتجهيز — +90 هدف واقعي مع التدريب.</li>
-          <li>الأسئلة تتكرر بشكل كبير من التجميعات، والتركيز على <b>طريقة الحل</b>.</li>
+        <div class="divider"></div>
+        <ul class="list">
+          <li><span class="dot"></span><span>المحتوى شامل ومُرتّب: فيديوهات مسجلة + ملفات PDF للطباعة + كويزات تدريبية.</span></li>
+          <li><span class="dot"></span><span>اشتراك مدى الحياة—كل التحديثات المقبلة توصلك مجانًا.</span></li>
+          <li><span class="dot"></span><span>قنوات تيليجرام خاصة للمشتركين للوصول السريع للمحتوى.</span></li>
+          <li><span class="dot"></span><span>لو ما حجزت اختبارك للحين… اشترك الآن وخذ الخصم وابدأ تأسيسك على راحتك.</span></li>
         </ul>
-      </aside>
-    </div>
-  </header>
-
-  <!-- KPIs -->
-  <section>
-    <div class="container kpis">
-      <div class="kpi"><b>100 ر.س</b><small>بدل 400 — عرض اليوم الوطني</small></div>
-      <div class="kpi"><b>مدى الحياة</b><small>تدفع مرة وحدة فقط</small></div>
-      <div class="kpi"><b>تحديثات</b><small>تلقائية بدون رسوم</small></div>
-      <div class="kpi"><b>دعم</b><small>منسق مباشر عبر تيليجرام</small></div>
-    </div>
-  </section>
-
-  <!-- WHAT'S INSIDE -->
-  <section id="inside">
-    <div class="container grid-2">
-      <div class="card">
-        <h3 class="sec-title">وش داخل الدورة؟</h3>
-        <ul class="clean">
-          <li>🎥 شروحات مسجّلة واضحة لكل الأقسام (Grammar – Reading – Listening – Structure).</li>
-          <li>📘 ملفات PDF للطباعة + ملخصات مختصرة (حتى لو باقي يوم على اختبارك).</li>
-          <li>📝 تجميعات مكررة محلولة + كويزات تدريبية.</li>
-          <li>🗂️ فهرس مرتب يمشيك خطوة بخطوة.</li>
-          <li>🧭 خطط مذاكرة مرنة بحسب وقتك.</li>
-          <li>🔄 تحديثات مستمرة وأي جديد يوصلك فورًا.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3 class="sec-title">ليش السعر هنا غير الموقع؟</h3>
-        <p>
-          لأن التسجيل هنا يتم عبر <b>مبادرة حُلم</b> كتنسيق خاص للمشتركين على تيليجرام. وفّرنا البكج الكامل بسعر رمزي
-          <b>(100 ر.س)</b> بدل السعر الرسمي الأعلى على الموقع، ومع ذلك يبقى اشتراكك <b>مدى الحياة</b> والتحديثات <b>مجانية</b>.
-        </p>
-        <div class="notice">
-          ℹ️ التفعيل والتواصل يتم <b>حصريًا عبر المنسق</b> على تيليجرام — لا سجّل من مواقع ثانية ولا حسابات غير موثوقة.
+        <div class="divider"></div>
+        <div class="grid" style="grid-template-columns:repeat(2,1fr);">
+          <a class="btn btn-primary" href="https://t.me/Hilm_STEP1" target="_blank">🚀 ابدأ التسجيل الآن</a>
+          <a class="btn" href="#quick-form">📝 نموذج تسجيل سريع</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- FREE & LINKS -->
-  <section id="free">
-    <div class="container grid-2">
-      <div class="card">
-        <h3 class="sec-title">روابط مهمة</h3>
-        <div class="links">
-          <a class="pill" href="https://t.me/Hilm_STEP1" target="_blank">✈️ حساب المنسق الرسمي @Hilm_STEP1</a>
-          <a class="pill" href="https://t.me/ayedacadmeybot" target="_blank">🤖 بوت المحتوى المجاني</a>
-          <a class="pill" href="https://t.me/Fightall" target="_blank">🛟 دعم سريع (تيليجرام)</a>
-          <a class="pill" href="mailto:galhag135@gmail.com">📧 تواصل عبر الإيميل</a>
-        </div>
-        <p class="disclaimer" style="margin-top:10px">
-          مو واثق للحين؟ عادي جدًا — جرّب المحتوى المجاني أول، وإذا ناسبك اشترك وقت ما تكون جاهز.
-        </p>
-      </div>
+      <!-- نموذج سريع -->
+      <div class="card" id="quick-form">
+        <h2>📝 نموذج تسجيل سريع (نسخ الرسالة وفتح المنسق)</h2>
+        <p class="lead">عبِّ البيانات تحت، والزر بيكوّن لك رسالة **اشتراك STEP** تلقائيًا بلهجة سعودية وينسخها ويفتح لك حساب المنسق.</p>
 
-      <div class="card">
-        <h3 class="sec-title">ملاحظات مهمة</h3>
-        <ul class="clean">
-          <li>الرد يتم أولًا لمن يرسل كلمة <b>“اشتراك STEP”</b> وجديّ بالاشتراك (بسبب ضغط الرسائل).</li>
-          <li>إذا راسلت قبل، أعد إرسال رسالتك بكلمة <b>“اشتراك STEP”</b> عشان يتأكد ترتيبك ويتفعل اشتراكك أسرع.</li>
-          <li>كل الروابط اللي داخل القنوات الرسمية يتم تحديثها باستمرار — لو تعطل فيديو قديم، البديل متوفر فورًا.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        <form class="form" onsubmit="composeMsg(event)">
+          <label>الاسم الكامل
+            <input class="input" id="name" required placeholder="مثال: نواف العتيبي">
+          </label>
+          <label>موعد اختبار STEP (إن وُجد)
+            <input class="input" id="date" placeholder="مثال: 2025-11-05 أو (ما حجزت بعد)">
+          </label>
+          <label>ملاحظات/احتياج معيّن (اختياري)
+            <textarea id="notes" rows="3" placeholder="مثال: أحتاج تركيز على الريدنق والقواعد."></textarea>
+          </label>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container card">
-      <h3 class="sec-title">الأسئلة المتكررة</h3>
-      <dl class="faq">
-        <dt>لو نزلت تجميعات سبتمبر/أكتوبر، لازم أدفع من جديد؟</dt>
-        <dd>لا، تدفع مرة وحدة فقط. كل التحديثات تجيك مجانًا مدى الحياة.</dd>
-        <dt>أقدر أستفيد لو اختباري بعد أشهر وما حجزت؟</dt>
-        <dd>إيه، اشترك وخذ الخطة المناسبة لوقتك. الاشتراك ما ينتهي.</dd>
-        <dt>هل فيه قروب طلاب؟</dt>
-        <dd>التنسيق والدعم يتم عبر المنسق الرسمي. (القروبات العامة مو شرط للاستفادة — الفهرس مرتب يكفي).</dd>
-        <dt>المحتوى يوتيوب ولا ملفات؟</dt>
-        <dd>مزيج: شروحات مسجّلة + ملفات PDF + نماذج وكويزات داخل قنوات الدورة.</dd>
-      </dl>
-    </div>
-  </section>
+          <div class="hint">💡 ما يحتاج تكتب "اشتراك STEP" — النظام يضيفها لك تلقائيًا في بداية الرسالة.</div>
 
-  <!-- APPLY -->
-  <section id="apply">
-    <div class="container grid-2">
-      <div class="card">
-        <h3 class="sec-title">طريقة التسجيل (مختصر)</h3>
-        <ol>
-          <li>عَبّ بياناتك السريعة في النموذج يمين الشاشة.</li>
-          <li>بيفتح لك تيليجرام تلقائيًا برسالة جاهزة للمنسق <b>@Hilm_STEP1</b>.</li>
-          <li>ارفع إيصال التحويل في نفس المحادثة.</li>
-          <li>يتم التأكيد خلال وقت قصير وترسل لك روابط الدخول للقنوات مباشرة.</li>
-        </ol>
-        <p class="notice">طرق الدفع الحالية: <b>تحويل بنكي</b>. (تمارا/تابي: غير متاحة حاليا)</p>
-      </div>
+          <button class="btn btn-primary" type="submit">📩 إنشاء الرسالة وفتح حساب المنسق</button>
+          <a class="btn btn-outline" target="_blank" href="https://t.me/Hilm_STEP1">فتح حساب المنسق مباشرة</a>
 
-      <div class="card">
-        <h3 class="sec-title">نموذج تسجيل سريع</h3>
-        <form class="form" id="regForm">
-          <div class="row">
-            <div>
-              <label>الاسم الكامل</label>
-              <input type="text" id="name" placeholder="مثال: شهد عطية" required>
-            </div>
-            <div>
-              <label>مستخدم تيليجرام</label>
-              <input type="text" id="tg" placeholder="@username" required>
-            </div>
-          </div>
-          <div class="row">
-            <div>
-              <label>موعد اختبارك (تقريبي)</label>
-              <input type="text" id="date" placeholder="مثال: نوفمبر 2025 أو لم أحدد بعد">
-            </div>
-            <div>
-              <label>مستواك الحالي</label>
-              <select id="level">
-                <option value="غير محدد">غير محدد</option>
-                <option value="مبتدئ (A1-A2)">مبتدئ (A1-A2)</option>
-                <option value="جيد (B1)">جيد (B1)</option>
-                <option value="متقدم (B2+)">متقدم (B2+)</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label>ملاحظاتك أو احتياجك</label>
-            <textarea id="note" rows="3" placeholder="أي ملاحظة تهمنا"></textarea>
-          </div>
-
-          <div class="disclaimer">
-            بعد الإرسال، سيفتح تيليجرام تلقائيًا برسالة جاهزة للمنسق — أرفق <b>إيصال التحويل</b> هناك لإتمام التأكيد.
-          </div>
-
-          <button class="btn btn-primary" type="submit">🚀 إرسال البيانات وفتح تيليجرام</button>
+          <div class="divider"></div>
+          <div class="pill">بعد الدفع: أرسل (الإيصال + اسمك + موعد الاختبار) ليتم التأكيد خلال دقائق وتوصلك روابط القنوات مباشرة.</div>
         </form>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CALL TO ACTION -->
-  <section>
-    <div class="container card" style="text-align:center">
-      <h3 class="sec-title">جاهز تبدأ؟ +90 صارت هدف واقعي 💪</h3>
-      <p>لا تنتظر — العرض محدود. اشترك اليوم وخذ مكانك مع التحديثات المستمرة مدى الحياة.</p>
-      <div class="actions" style="justify-content:center">
-        <a class="btn btn-primary" href="#apply">سجّل الآن</a>
-        <a class="btn btn-ghost" href="https://t.me/ayedacadmeybot" target="_blank">تجربة المحتوى المجاني</a>
-      </div>
-    </div>
-  </section>
+    <!-- روابط مهمة -->
+    <section class="card" style="margin-top:18px">
+      <h2>روابط مهمة</h2>
+      <ul class="list">
+        <li><span class="dot"></span>
+          <span>قناتنا العامة للتنبيهات والعروض: <a target="_blank" href="https://t.me/stepp2024">https://t.me/stepp2024</a></span>
+        </li>
+        <li><span class="dot"></span>
+          <span>التسجيل والتأكيد عبر المنسق فقط: <a target="_blank" href="https://t.me/Hilm_STEP1">@Hilm_STEP1</a></span>
+        </li>
+        <li><span class="dot"></span>
+          <span>ملاحظة: الرد يتم بالأولوية لمن يرسل كلمة <b>“اشتراك STEP”</b> ويكون جاد بالتسجيل.</span>
+        </li>
+      </ul>
+    </section>
 
-  <footer>
-    <div class="container" style="display:grid;gap:10px">
-      <div class="links">
-        <span class="pill">© أكاديمية عايد • مبادرة حُلم</span>
-        <a class="pill" href="https://t.me/Hilm_STEP1" target="_blank">التسجيل/الدعم: @Hilm_STEP1</a>
-        <a class="pill" href="https://t.me/ayedacadmeybot" target="_blank">بوت المحتوى المجاني</a>
-        <a class="pill" href="https://t.me/Fightall" target="_blank">دعم سريع</a>
-        <a class="pill" href="mailto:galhag135@gmail.com">الإيميل: galhag135@gmail.com</a>
-      </div>
-      <small>روابط رسمية فقط. أي حساب مختلف غير معتمد.</small>
-    </div>
-  </footer>
+    <!-- توضيحات سريعة -->
+    <section class="card" style="margin-top:18px">
+      <h2>أسئلة سريعة وتوضيحات</h2>
+      <ul class="list">
+        <li><span class="dot"></span><span>هل تنفع لو مستواي ضعيف؟ إيه، فيه تأسيس من الصفر وخطط تمشيك خطوة بخطوة.</span></li>
+        <li><span class="dot"></span><span>النماذج تتغير؟ الأساس ثابت والمتكرر كثير—نحدّث أول بأول لو طلع جديد.</span></li>
+        <li><span class="dot"></span><span>ما حجزت اختبارك؟ عادي اشترك الآن وخذ الخصم، وابدأ تأسيس ومراجعة على مهلك.</span></li>
+        <li><span class="dot"></span><span>السعر مختلف عن الموقع؟ هذا <b>عرض خاص عبر المنسق</b> للمشتركين على تيليجرام (100 ر.س بدل 400).</span></li>
+      </ul>
+    </section>
+
+    <footer>
+      © مبادرة حُلم × أكاديمية عايد — اختبار STEP الشامل • تصميم خفيف وسريع عبر GitHub Pages
+    </footer>
+  </div>
 
   <script>
-    // فتح تيليجرام برسالة مُهيكلة للمنسق مع بيانات الطالب
-    const form = document.getElementById('regForm');
-    form.addEventListener('submit', (e)=>{
+    function composeMsg(e){
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
-      const tg = document.getElementById('tg').value.trim();
-      const date = document.getElementById('date').value.trim() || 'لم أحدد بعد';
-      const level = document.getElementById('level').value;
-      const note = document.getElementById('note').value.trim() || '—';
-
-      if(!name || !tg){
-        alert('فضلاً عبّئ الاسم ومستخدم تيليجرام.');
-        return;
-      }
+      const date = (document.getElementById('date').value.trim() || 'ما حجزت بعد');
+      const notes = document.getElementById('notes').value.trim();
 
       const msg =
 `اشتراك STEP
-
+السلام عليكم، أرغب بالانضمام للدورة الشاملة.
 الاسم: ${name}
-تيليجرام: ${tg}
 موعد الاختبار: ${date}
-المستوى الحالي: ${level}
-ملاحظات: ${note}
+ملاحظات/احتياج: ${notes || 'لا يوجد'}
+أتعهد بإرسال إيصال التحويل لتأكيد الاشتراك.`;
 
-سأرفق إيصال التحويل الآن لتأكيد الاشتراك.`;
+      // نسخ للذاكرة
+      navigator.clipboard.writeText(msg).then(()=>{},()=>{});
 
-      const url = `https://t.me/Hilm_STEP1?text=${encodeURIComponent(msg)}`;
-      window.open(url, '_blank');
-    });
+      // فتح حساب المنسق
+      window.open('https://t.me/Hilm_STEP1', '_blank');
+
+      // تنبيه بسيط للمستخدم
+      alert('تم إنشاء الرسالة ونسخها. الصقها في محادثة المنسق بعد فتح التليجرام 👍');
+    }
   </script>
 </body>
 </html>
