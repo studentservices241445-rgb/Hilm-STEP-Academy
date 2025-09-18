@@ -14,15 +14,16 @@
     --stroke:#124536; --glass:rgba(6,63,45,.35); --glass2:rgba(8,53,36,.55);
     --glow:0 14px 36px rgba(14,165,107,.28);
   }
-  *{box-sizing:border-box} html,body{height:100%}
+  *{box-sizing:border-box}
+  html,body{height:100%}
   body{
     margin:0;font-family:"Tajawal",system-ui,Segoe UI,Roboto,Arial;
-    color:var(--white);
+    color:var(--white); text-align:right;
     background:
       radial-gradient(1100px 700px at 100% -10%, rgba(14,165,107,.10), transparent 65%),
       radial-gradient(900px 600px at -10% 110%, rgba(6,63,45,.55), transparent 60%),
       linear-gradient(180deg, #072a20, var(--green-3) 55%, #061d16);
-    line-height:1.85; scroll-behavior:smooth;
+    line-height:1.9; scroll-behavior:smooth;
   }
   a{color:#c7ffdb; text-decoration:none}
   .wrap{max-width:1160px;margin:auto;padding:24px}
@@ -42,6 +43,13 @@
     margin-top:14px;border:1px solid var(--stroke);border-radius:18px;padding:24px;position:relative;overflow:hidden;
     background:linear-gradient(135deg, var(--glass2), rgba(6,63,45,.35));
     isolation:isolate;
+  }
+  .saudi-motif{
+    position:absolute; inset:auto -80px -80px auto; width:260px; height:260px; opacity:.12; pointer-events:none;
+    background:
+      radial-gradient(closest-side, #fff 7%, transparent 8%) 0 0/40px 40px,
+      radial-gradient(closest-side, #fff 7%, transparent 8%) 20px 20px/40px 40px;
+    filter:blur(1px);
   }
   .ribbon{position:absolute;top:16px;left:16px;background:linear-gradient(90deg,#0ce185,#22c55e);
     color:#06231b;font-weight:800;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.25);
@@ -78,32 +86,27 @@
   label{display:block;margin-bottom:6px;color:#e7fff5;font-weight:700}
   input,select,textarea{
     width:100%;padding:12px 12px;border-radius:12px;border:1px solid var(--stroke);
-    background:rgba(4,25,19,.45);color:#f6fff9;outline:none
+    background:rgba(4,25,19,.45);color:#f6fff9;outline:none; text-align:right;
   }
   textarea{resize:vertical}
   .hint{color:#bfe9d8;font-size:13px;margin-top:8px}
   footer{text-align:center;color:#cbeee0;margin:34px 0 90px}
 
-  /* شهادات */
   .quote{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.2);border-radius:14px;padding:14px}
   .quote b{color:#b7ffcf}
-  /* خطوات */
   .steps{counter-reset:st}
   .step{position:relative;padding:14px;border:1px solid var(--stroke);border-radius:12px;background:rgba(7,43,33,.5);margin-bottom:10px}
-  .step:before{counter-increment:st;content:counter(st);position:absolute;inset:-12px auto auto -12px;background:var(--gold);color:#052216;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:900;border:2px solid #fff}
-  /* شارات الثقة */
+  .step:before{counter-increment:st;content:counter(st);position:absolute;inset:-12px -12px auto auto;background:var(--gold);color:#052216;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:900;border:2px solid #fff}
   .badges{display:flex;flex-wrap:wrap;gap:10px}
   .badge{border:1px solid var(--stroke);background:rgba(7,43,33,.45);padding:10px 12px;border-radius:12px;font-weight:800}
 
-  /* CTA سفلي ثابت */
   .sticky-cta{
     position:fixed;inset:auto 0 0 0;padding:10px;background:rgba(6,63,45,.85);backdrop-filter:blur(8px);
     border-top:1px solid var(--stroke);display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;z-index:50
   }
   .sticky-cta .tag{background:linear-gradient(90deg, var(--gold),#ffe58a);color:#11301f;font-weight:900;border-radius:999px;padding:4px 10px}
-  .topbtn{position:fixed;inset:auto 16px 86px auto;background:var(--green);color:#05311f;border:none;border-radius:999px;padding:10px 12px;font-weight:900;cursor:pointer;box-shadow:var(--glow);z-index:51}
+  .topbtn{position:fixed;inset:auto auto 86px 16px;background:var(--green);color:#05311f;border:none;border-radius:999px;padding:10px 12px;font-weight:900;cursor:pointer;box-shadow:var(--glow);z-index:51}
 
-  /* حركات */
   .fade{opacity:0;transform:translateY(6px);transition:.5s ease}
   .fade.show{opacity:1;transform:none}
   .countdown{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
@@ -121,6 +124,7 @@
   </div>
 
   <header class="hero fade" id="top">
+    <div class="saudi-motif" aria-hidden="true"></div>
     <span class="ribbon">اليوم الوطني</span>
     <div class="hero-head">
       <div class="logo" title="A">عايد</div>
@@ -144,7 +148,6 @@
     <div class="wave"></div>
   </header>
 
-  <!-- ما هو STEP -->
   <section class="section fade" id="about">
     <h2>ما هو اختبار STEP؟</h2>
     <div class="card">
@@ -154,14 +157,13 @@
     </div>
   </section>
 
-  <!-- محتوى الدورة + السعر -->
   <section class="section grid grid-2 fade">
     <div class="card">
       <h2>محتوى الدورة</h2>
       <ul>
         <li>شروحات فيديو واضحة لكل الأقسام (Grammar – Reading – Listening – Structure).</li>
-        <li>ملفات PDF للطباعة + ملخصات مختصرة “بكج الطوارئ” للمراجعة السريعة.</li>
-        <li>تجميعات مكررة حديثة مع الحلول — نضيف أي جديد أول بأول.</li>
+        <li>ملفات PDF للطباعة + ملخصات مختصرة “بكج الطوارئ”.</li>
+        <li>تجميعات مكررة حديثة مع الحلول — أي جديد نضيفه أول بأول.</li>
         <li>كويزات تدريبية تحاكي طبيعة الاختبار.</li>
         <li>خطط مذاكرة مرنة تناسب وقتك (مكثفة / متدرجة).</li>
         <li>اشتراك مدى الحياة + تحديثات مجانية — بدون أي رسوم لاحقة.</li>
@@ -182,8 +184,8 @@
       </div>
       <p class="reason">
         <strong>ليه السعر مختلف عن الموقع؟</strong><br>
-        لأننا نقدّم المحتوى عبر تيليجرام مباشرة بإدارة داخلية، بدون بوابات دفع أو عمولات،
-        فنقلّل التكلفة على الطالب مع الحفاظ على جودة الشرح والتحديثات. الهدف: تقدر تبدأ بسهولة وبدون عوائق مادية.
+        لأننا نقدّم المحتوى عبر تيليجرام مباشرة بإدارة داخلية وبدون عمولات،
+        فنقلّل التكلفة على الطالب مع الحفاظ على جودة الشرح والتحديثات. الهدف: تبدأ بسهولة وبدون عوائق مادية.
       </p>
       <div class="cta-row">
         <a class="btn btn-main" href="#register">🎯 سجّل الآن</a>
@@ -192,13 +194,12 @@
     </div>
   </section>
 
-  <!-- خطة أول 48 ساعة -->
   <section class="section fade">
     <h2>خطة أول 48 ساعة (تدفئة سريعة)</h2>
     <div class="card grid grid-2">
       <div>
         <div class="step">
-          <b>اليوم 1 — صباحًا:</b> نظرة سريعة على هيكل الاختبار + اختبار تمهيدي قصير لمعرفة مستواك.
+          <b>اليوم 1 — صباحًا:</b> نظرة على هيكل الاختبار + اختبار تمهيدي قصير لمعرفة مستواك.
         </div>
         <div class="step">
           <b>اليوم 1 — مساءً:</b> قواعد أساسية مركّزة + كويز قصير + ملخصات الـ PDF.
@@ -206,7 +207,7 @@
       </div>
       <div>
         <div class="step">
-          <b>اليوم 2 — صباحًا:</b> قراءة (قطع متكررة) + أسئلة مباشرة على الفكرة الرئيسية والمفردات.
+          <b>اليوم 2 — صباحًا:</b> قراءة (قطع متكررة) + أسئلة رئيسية والمفردات.
         </div>
         <div class="step">
           <b>اليوم 2 — مساءً:</b> استماع (حوار/مقاطع قصيرة) + ملاحظات على الأخطاء الشائعة.
@@ -216,7 +217,6 @@
     <div class="hint">بعدها نكمل حسب خطتك (مكثفة / متدرجة) إلى يوم الاختبار.</div>
   </section>
 
-  <!-- شهادات -->
   <section class="section fade">
     <h2>تجارب طلاب</h2>
     <div class="card grid grid-3">
@@ -226,7 +226,6 @@
     </div>
   </section>
 
-  <!-- روابط مهمة -->
   <section class="section fade">
     <h2>روابط مهمة</h2>
     <div class="card">
@@ -239,7 +238,6 @@
     </div>
   </section>
 
-  <!-- الأسئلة الشائعة -->
   <section class="section fade">
     <h2>الأسئلة الشائعة</h2>
     <div class="card faq">
@@ -253,14 +251,13 @@
       <p>إيه، زور <a href="https://t.me/ayedacadmeybot" target="_blank" style="color:#b7ffcf">بوت المحتوى المجاني</a> وشوف بنفسك.</p>
 
       <h3>مقاطع خاصة على اليوتيوب؟</h3>
-      <p>لو واجهت خاصة، عندك نفس المحتوى مرتب داخل الدرايف والقناة. نحافظ على الوصول عبر أكثر من مسار.</p>
+      <p>لو واجهت “خاص”، عندك نفس المحتوى مرتب داخل الدرايف والقناة. نحافظ على الوصول بأكثر من مسار.</p>
 
       <h3>هل فيه استرجاع؟</h3>
-      <p>بما أن الوصول للمحتوى يكون مباشر بعد الدفع، الاسترجاع غير متاح. نضمن لك جودة المحتوى والدعم.</p>
+      <p>بما أن الوصول للمحتوى مباشر بعد الدفع، الاسترجاع غير متاح. نضمن لك جودة المحتوى والدعم.</p>
     </div>
   </section>
 
-  <!-- خطوات الاشتراك -->
   <section class="section fade" id="how">
     <h2>طريقة الاشتراك (خطوات سهلة)</h2>
     <div class="card steps">
@@ -271,7 +268,6 @@
     </div>
   </section>
 
-  <!-- تنبيهات -->
   <section class="section fade">
     <h2>تنبيهات مهمة</h2>
     <div class="card">
@@ -283,7 +279,6 @@
     </div>
   </section>
 
-  <!-- نموذج التسجيل -->
   <section class="section fade" id="register">
     <h2>نموذج التسجيل السريع</h2>
     <div class="card">
@@ -319,7 +314,6 @@
   </footer>
 </div>
 
-<!-- CTA سفلي ثابت -->
 <div class="sticky-cta">
   <span class="tag">🇸🇦 عرض اليوم الوطني</span>
   <span>100 ريال بدل 400 — مدى الحياة + تحديثات مجانية</span>
@@ -329,15 +323,15 @@
 <button class="topbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
 
 <script>
-  // إظهار الحركات أثناء التمرير
+  // إظهار العناصر مع التمرير (RTL friendly)
   const faders = document.querySelectorAll('.fade');
   const io = new IntersectionObserver(entries=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); }});
   },{threshold:.12});
   faders.forEach(el=>io.observe(el));
 
-  // عداد تنازلي — غيّر التاريخ هنا
-  const DEADLINE = new Date("2025-09-25T23:59:59"); // مثال: نهاية عرض اليوم الوطني
+  // عدّاد: ينتهي 23 سبتمبر (حدّث السنة إذا احتجت)
+  const DEADLINE = new Date("2025-09-23T23:59:59");
   const dd=document.getElementById('dd'), hh=document.getElementById('hh'), mm=document.getElementById('mm'), ss=document.getElementById('ss');
   function pad(n){return n<10?'0'+n:n}
   function tick(){
