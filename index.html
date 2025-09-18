@@ -3,181 +3,288 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>أكاديمية عايد – دورة STEP الشاملة | مبادرة حُلم</title>
+<title>أكاديمية عايد × مبادرة حُلم — دورة STEP الشاملة | عرض اليوم الوطني</title>
+<meta name="description" content="دورة STEP الشاملة — شرح، نماذج مكررة، خطط مذاكرة، خصم اليوم الوطني 100 ريال بدل 400، اشتراك مدى الحياة وتحديثات مجانية." />
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#0f172a;--card:#111827;--muted:#9ca3af;--text:#f8fafc;--brand:#22c55e;--brand2:#16a34a;--accent:#38bdf8;}
-  *{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,"Noto Naskh Arabic",Tahoma,Arial}
-  body{margin:0;background:linear-gradient(180deg,#0b1220,#0f172a);}
-  .wrap{max-width:980px;margin:auto;padding:28px}
-  .hero{display:flex;gap:18px;align-items:center;flex-wrap:wrap;padding:18px 20px;background:linear-gradient(135deg,#111827,#0b1220);border:1px solid #1f2937;border-radius:18px}
-  .logo{width:68px;height:68px;border-radius:16px;background:#0ea5e9;display:grid;place-items:center;color:#fff;font-weight:800}
-  .hero h1{color:var(--text);margin:0;font-size:26px}
-  .hero p{color:var(--muted);margin:6px 0 0}
-  .grid{display:grid;gap:16px;margin-top:18px}
-  @media(min-width:850px){.grid{grid-template-columns:1fr 1fr}}
-  .card{background:var(--card);border:1px solid #1f2937;border-radius:16px;padding:18px}
-  .card h3{margin:0 0 10px;color:#e5e7eb}
-  .card p,.card li,small{color:var(--muted);line-height:1.8}
-  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--brand);color:#04120a;
-       border:0;padding:12px 16px;border-radius:12px;font-weight:700;cursor:pointer}
-  .btn:hover{background:var(--brand2)}
-  .btn-outline{background:transparent;color:#cbd5e1;border:1px solid #334155}
-  .btn-outline:hover{border-color:#64748b;color:#fff}
-  .row{display:grid;gap:12px}
-  label{color:#cbd5e1;font-size:14px}
-  input,textarea,select{width:100%;background:#0b1220;color:#e5e7eb;border:1px solid #1f2937;
-    border-radius:12px;padding:12px;outline:none}
-  input:focus,textarea:focus,select:focus{border-color:#334155}
-  .note{background:#072d1a;border:1px solid #134e4a;color:#d1fae5;padding:12px;border-radius:12px}
-  .muted{color:#9ca3af}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{background:#0b1220;border:1px dashed #334155;color:#cbd5e1;padding:6px 10px;border-radius:999px;font-size:12px}
-  footer{margin-top:20px;color:#64748b;text-align:center}
-  .small{font-size:12px}
+  :root{
+    /* لوحة اليوم الوطني */
+    --green:#0ea56b;      /* أخضر أساسي */
+    --green-2:#0c8d5b;    /* أخضر أغمق */
+    --green-3:#063f2d;    /* أخضر داكن للخلفية */
+    --white:#ffffff;
+    --gold:#facc15;       /* ذهبي للهايلايت */
+    --ink:#0b1324;        /* حبر غامق */
+    --muted:#cbd5e1;      /* نص ثانوي */
+    --card:#0f1a25;       /* كرت */
+    --stroke:#12343a;     /* حدود شفافة خضرا */
+    --glow:0 10px 30px rgba(14,165,107,.25);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:"Tajawal",system-ui,Segoe UI,Roboto,Arial;
+    color:var(--white);
+    background:
+      radial-gradient(1200px 800px at 100% -10%, rgba(14,165,107,.12), transparent 60%),
+      radial-gradient(1000px 600px at -10% 110%, rgba(6,63,45,.55), transparent 60%),
+      linear-gradient(180deg, #06231b, var(--green-3) 55%, #061a14);
+    line-height:1.75;
+  }
+  .wrap{max-width:1100px;margin:auto;padding:24px}
+  /* شريط علوي */
+  .topbar{
+    display:flex;gap:10px;align-items:center;justify-content:center;
+    padding:10px 14px;background:rgba(6,63,45,.35);border:1px solid var(--stroke);
+    border-radius:12px;margin:12px auto;color:#e2f6ec;font-weight:600
+  }
+  .badge-hero{
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(90deg, var(--gold), #ffd95a);
+    color:#1f2b1f;padding:6px 12px;border-radius:999px;font-weight:800;font-size:13px;
+    box-shadow:0 6px 18px rgba(250,204,21,.35);
+  }
+  header.hero{
+    margin-top:14px;background:
+      radial-gradient(600px 300px at 10% -10%, rgba(250,204,21,.15), transparent 60%),
+      linear-gradient(135deg, rgba(6,63,45,.65), rgba(6,63,45,.35));
+    border:1px solid var(--stroke);border-radius:18px;padding:24px;
+    position:relative;overflow:hidden;
+  }
+  /* زخارف سيوف/نخلة خفيفة */
+  .hero::after,.hero::before{
+    content:"";position:absolute;inset:auto auto -60px -60px;width:220px;height:220px;
+    background:
+      radial-gradient(closest-side, rgba(255,255,255,.08), transparent 70%),
+      conic-gradient(from 45deg, rgba(14,165,107,.25), transparent 60%);
+    filter:blur(2px);border-radius:50%;transform:rotate(12deg);
+  }
+  .hero::before{inset:-70px -70px auto auto;transform:rotate(-16deg)}
+  .hero-head{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .logo{
+    width:84px;height:84px;border-radius:16px;overflow:hidden;flex:0 0 auto;
+    box-shadow:var(--glow);border:1px solid var(--stroke);background:#083524;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#d1fae5
+  }
+  .logo img{width:100%;height:100%;object-fit:cover}
+  h1{margin:0 0 6px 0;font-size:30px}
+  .sub{color:#d9f7ec}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;
+       padding:12px 18px;border-radius:12px;border:1px solid transparent}
+  .btn-main{background:linear-gradient(180deg, var(--green), var(--green-2));color:#06231b;box-shadow:var(--glow)}
+  .btn-main:hover{filter:brightness(1.05)}
+  .btn-ghost{color:#e7fff5;border-color:var(--stroke);background:rgba(4,25,19,.35)}
+  .section{margin-top:26px}
+  h2{margin:0 0 10px 0;font-size:22px;color:#e7fff5}
+  .card{
+    background:linear-gradient(180deg, rgba(8,53,36,.65), rgba(8,53,36,.35));
+    border:1px solid var(--stroke);border-radius:16px;padding:18px;box-shadow:0 1px 0 rgba(255,255,255,.04) inset;
+  }
+  .grid{display:grid;gap:16px}
+  @media(min-width:860px){.grid-2{grid-template-columns:1fr 1fr}}
+  ul{padding-right:18px;margin:0}
+  li{margin:6px 0}
+  .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(56,189,248,.15);color:#c7f9ff;border:1px solid rgba(56,189,248,.25);font-weight:700}
+  .price{
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:18px
+  }
+  .price s{color:#a7b8ad}
+  .price .now{color:#22f7a0;font-weight:900;font-size:20px}
+  .reason{color:#eafcf5}
+  .faq h3{margin:0 0 6px 0;font-size:18px;color:#e7fff5}
+  .faq p{margin:0 0 14px 0;color:#d7efe6}
+  label{display:block;margin-bottom:6px;color:#e7fff5;font-weight:700}
+  input,select,textarea{
+    width:100%;padding:12px 12px;border-radius:12px;border:1px solid var(--stroke);
+    background:rgba(4,25,19,.45);color:#f6fff9;outline:none
+  }
+  textarea{resize:vertical}
+  .hint{color:#bfe9d8;font-size:13px;margin-top:8px}
+  footer{text-align:center;color:#cbeee0;margin:34px 0 10px}
+  /* شريط وسم اليوم الوطني */
+  .ribbon{
+    position:absolute;top:16px;left:16px;background:linear-gradient(90deg,#0ce185,#06c270);
+    color:#06231b;font-weight:800;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.25);
+    box-shadow:0 10px 22px rgba(7,197,120,.35)
+  }
+  /* موجة زخرفية سفلية خضراء */
+  .wave{height:8px;border-radius:999px;background:linear-gradient(90deg,#0ce185,#22c55e,#06c270);filter:saturate(1.2);box-shadow:0 8px 26px rgba(34,197,94,.35) inset;margin-top:14px}
 </style>
 </head>
 <body>
-  <div class="wrap">
 
-    <!-- HERO -->
-    <section class="hero">
-      <!-- غيّر src إلى شعار أكاديمية عايد لو متوفر لديك محليًا -->
-      <img src="https://raw.githubusercontent.com/ayedsotohy/.github/main/profile/ayed_logo.png" alt="شعار أكاديمية عايد" class="logo" onerror="this.outerHTML='<div class=&quot;logo&quot;>عايد</div>'">
-      <div>
-        <h1>أكاديمية عايد × مبادرة <span style="color:#34d399">حُلم</span> – دورة STEP الشاملة</h1>
-        <p>خصم قوي لفترة محدودة – <strong style="color:#86efac">100 ريال بدل 400</strong> – اشتراك مدى الحياة وتحديثات مجانية.</p>
-      </div>
-    </section>
+<div class="wrap">
 
-    <!-- روابط سريعة -->
-    <div class="grid">
-      <div class="card">
-        <h3>روابط مهمة</h3>
-        <div class="row">
-          <a class="btn" href="https://t.me/Hilm_STEP1" target="_blank">التسجيل السريع مع المنسق @Hilm_STEP1</a>
-          <a class="btn btn-outline" href="https://t.me/stepp2024" target="_blank">قناة الدورة والتحديثات</a>
-          <a class="btn btn-outline" href="https://t.me/ayedacadmeybot" target="_blank">بوت المحتوى المجاني</a>
-        </div>
-        <div class="chips" style="margin-top:12px">
-          <span class="chip">Grammar</span>
-          <span class="chip">Reading</span>
-          <span class="chip">Listening</span>
-          <span class="chip">Structure</span>
-          <span class="chip">تجميعات مكررة</span>
-        </div>
-      </div>
-
-      <!-- مميزات مختصرة -->
-      <div class="card">
-        <h3>ليش تشترك؟</h3>
-        <ul>
-          <li>شروحات مسجلة + ملفات PDF للطباعة + ملخصات مختصرة.</li>
-          <li>تجميعات وأسئلة مكررة محلولة + كويزات تدريبية.</li>
-          <li>خطط مذاكرة مرنة (مكثف / متدرج) تناسب وقتك.</li>
-          <li>اشتراك مدى الحياة – كل التحديثات مجانًا.</li>
-        </ul>
-        <p class="note small">⚠️ بسبب كثرة الرسائل، يتم prioritizing الرد على اللي يرسلون «اشتراك STEP» وجادّين بالاشتراك.</p>
-      </div>
-    </div>
-
-    <!-- نموذج التسجيل الذكي -->
-    <section class="card" style="margin-top:16px">
-      <h3>نموذج تسجيل سريع</h3>
-      <p class="muted small">عبّ البيانات، واضغط إرسال – نفتح لك تيليجرام برسالة جاهزة تبدأ بـ <strong>اشتراك STEP</strong> للمنسق مباشرة.</p>
-
-      <form id="signupForm" class="row" onsubmit="return sendToTelegram()">
-        <div class="row">
-          <label>الاسم الكامل</label>
-          <input id="name" placeholder="مثال: نواف العتيبي" required>
-        </div>
-        <div class="row">
-          <label>موعد الاختبار</label>
-          <select id="exam">
-            <option value="ما حجزت بعد">ما حجزت بعد</option>
-            <option>هذا الشهر</option>
-            <option>الشهر القادم</option>
-            <option>بعد ٣ أشهر+</option>
-          </select>
-        </div>
-        <div class="row">
-          <label>ملاحظات/احتياج (اختياري)</label>
-          <textarea id="notes" rows="3" placeholder="مثال: أحتاج تركيز على الريدنق والجرامر"></textarea>
-        </div>
-
-        <button class="btn" type="submit">إرسال الطلب للمنسق الآن</button>
-        <button class="btn btn-outline" type="button" onclick="copyMessage()">نسخ الرسالة يدويًا</button>
-
-        <small class="muted">بالإرسال أنت موافق إننا نزوّدك ببيانات التحويل البنكي لتأكيد اشتراكك بسرعة، وتفعيله فور إرسال الإيصال ✅</small>
-
-        <textarea id="preview" class="small" rows="8" style="margin-top:10px;display:none"></textarea>
-      </form>
-    </section>
-
-    <!-- معلومات الدفع وشرح مختصر -->
-    <div class="grid" style="margin-top:16px">
-      <div class="card">
-        <h3>وش يشمل اشتراكك؟</h3>
-        <ul>
-          <li>كل الأقسام: القواعد – القراءة – الاستماع – التراكيب.</li>
-          <li>ملف مختصر للطوارئ تذاكر منه حتى لو باقي يوم.</li>
-          <li>تحديثات مستمرة أول بأول بدون أي رسوم إضافية.</li>
-          <li>دعم واستشارات خاصة أثناء التحضير.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>تنويه مهم</h3>
-        <p>السعر الرسمي بالمواقع أعلى، لكن عبر مبادرة <strong>حُلم</strong> خصم خاص <strong>100 ريال</strong> فقط – اشتراك مدى الحياة.</p>
-        <p class="note small">لو كنت مو متأكد أو تحب تتطمن، عندك <a href="https://t.me/ayedacadmeybot" target="_blank" style="color:#a7f3d0">المحتوى المجاني</a> تتصفح وتشوف طريقة الشرح.</p>
-      </div>
-    </div>
-
-    <footer>
-      <p class="small">© أكاديمية عايد × مبادرة حُلم – دورة STEP الشاملة</p>
-    </footer>
+  <div class="topbar">
+    <span class="badge-hero">🇸🇦 عرض اليوم الوطني</span>
+    <span>خصم خاص — <strong>100 ريال بدل 400</strong> — اشتراك مدى الحياة + تحديثات مجانية</span>
   </div>
 
+  <header class="hero">
+    <span class="ribbon">اليوم الوطني</span>
+    <div class="hero-head">
+      <div class="logo" title="A">
+        <!-- استبدل بالصورة لو حبيت -->
+        عايد
+      </div>
+      <div>
+        <h1>أكاديمية عايد × مبادرة حُلم — دورة STEP الشاملة</h1>
+        <div class="sub">شرح متكامل، تجميعات مكررة محلولة، خطط مذاكرة مرنة، ودعم مستمر حتى توصل لهدفك 🎯</div>
+        <div class="cta-row">
+          <a class="btn btn-main" href="#register">🎫 اشترك الآن</a>
+          <a class="btn btn-ghost" href="https://t.me/stepp2024" target="_blank">📢 قناة الدورة والتحديثات</a>
+          <a class="btn btn-ghost" href="https://t.me/ayedacadmeybot" target="_blank">📂 بوت المحتوى المجاني</a>
+        </div>
+      </div>
+    </div>
+    <div class="wave"></div>
+  </header>
+
+  <!-- ما هو STEP -->
+  <section class="section" id="about">
+    <h2>ما هو اختبار STEP؟</h2>
+    <div class="card">
+      اختبار كفايات اللغة الإنجليزية (STEP) يقيس مهارات <strong>الاستماع، القراءة، القواعد والتراكيب، والكتابة التحليلية</strong>.
+      الدرجة من 100، وعادةً: <span class="pill">+70 جيد جدًا</span> — <span class="pill">+90 ممتاز</span>.
+      مع دورتنا الشاملة، بنمشي معك خطوة بخطوة بأسلوب واضح وسهل حتى تحقق هدفك بإذن الله.
+    </div>
+  </section>
+
+  <!-- محتوى الدورة + السعر -->
+  <section class="section grid grid-2">
+    <div class="card">
+      <h2>محتوى الدورة</h2>
+      <ul>
+        <li>شروحات فيديو واضحة لكل الأقسام (Grammar – Reading – Listening – Structure).</li>
+        <li>ملفات PDF للطباعة + ملخصات مختصرة “بكج الطوارئ” للمراجعة السريعة.</li>
+        <li>تجميعات مكررة حديثة مع الحلول — نضيف أي جديد أول بأول.</li>
+        <li>كويزات تدريبية تحاكي طبيعة الاختبار.</li>
+        <li>خطط مذاكرة مرنة تناسب وقتك (مكثفة / متدرجة).</li>
+        <li>اشتراك مدى الحياة + تحديثات مجانية — بدون أي رسوم لاحقة.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>السعر والخصم — 🇸🇦 اليوم الوطني</h2>
+      <div class="price">
+        <s>400 ريال</s>
+        <span class="now">100 ريال فقط</span>
+        <span class="pill">لفترة محدودة</span>
+      </div>
+      <p class="reason">
+        سبب فرق السعر عن الموقع الرسمي: نقدم المحتوى مباشرة عبر تيليجرام مع إدارة داخلية بلا وسطاء،
+        فنوفر عليك التكلفة ونحافظ على جودة الشرح والتحديثات. الهدف إن كل طالب يقدر يبدأ بدون عوائق مادية.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-main" href="#register">🎯 بدي أبدأ الآن</a>
+        <a class="btn btn-ghost" href="https://t.me/Hilm_STEP1" target="_blank">💬 تواصل مع المنسق</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- روابط مهمة -->
+  <section class="section">
+    <h2>روابط مهمة</h2>
+    <div class="card">
+      <div class="cta-row">
+        <a class="btn btn-main" href="https://t.me/Hilm_STEP1" target="_blank">💬 حساب المنسق الرسمي</a>
+        <a class="btn btn-ghost" href="https://t.me/stepp2024" target="_blank">📢 قناة المشتركين والتحديثات</a>
+        <a class="btn btn-ghost" href="https://t.me/ayedacadmeybot" target="_blank">📂 بوت المحتوى المجاني</a>
+      </div>
+      <div class="hint">* الرد يكون أولويته للطلاب اللي يرسلون “اشتراك STEP” وجادّين بالتسجيل.</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <h2>الأسئلة الشائعة</h2>
+    <div class="card faq">
+      <h3>هل الاشتراك محدد المدة؟</h3>
+      <p>لا. الاشتراك مدى الحياة، وكل التحديثات توصل لك مجانًا.</p>
+
+      <h3>لو ما حجزت اختباري إلا بعد أشهر؟</h3>
+      <p>برضه تقدر تشترك الآن، وتجهز على هدوء. المحتوى ثابت معك، وتحدّثه نرسله لك أول بأول.</p>
+
+      <h3>هل في تجارب أو مقاطع توضيحية؟</h3>
+      <p>تقدر تشوف جزء من المحتوى عبر <a href="https://t.me/ayedacadmeybot" target="_blank" style="color:#b7ffcf">بوت المحتوى المجاني</a>.</p>
+
+      <h3>هل فيه استرجاع؟</h3>
+      <p>بما أن الوصول للمحتوى يكون مباشر بعد الدفع، الاسترجاع غير متاح. نضمن لك جودة ووضوح المحتوى والدعم.</p>
+    </div>
+  </section>
+
+  <!-- تنبيهات -->
+  <section class="section">
+    <h2>تنبيهات مهمة</h2>
+    <div class="card">
+      <ul>
+        <li>لضمان سرعة التفعيل: بعد الدفع أرسل الإيصال + اسمك + موعد اختبارك.</li>
+        <li>بسبب ضغط الرسائل، الأولوية بالرد لمن يرسلون “اشتراك STEP”.</li>
+        <li>كل التحديثات الجديدة تنزل للمشتركين تلقائيًا بدون أي رسوم إضافية.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- نموذج التسجيل -->
+  <section class="section" id="register">
+    <h2>نموذج التسجيل السريع</h2>
+    <div class="card">
+      <form onsubmit="return sendToTelegram()">
+        <label for="name">الاسم الكامل</label>
+        <input id="name" required placeholder="مثال: نواف العتيبي" />
+
+        <label for="exam">موعد الاختبار</label>
+        <select id="exam">
+          <option>ما حجزت بعد</option>
+          <option>هذا الشهر</option>
+          <option>الشهر القادم</option>
+          <option>بعد ٣ أشهر+</option>
+        </select>
+
+        <label for="notes">ملاحظات/احتياجات (اختياري)</label>
+        <textarea id="notes" rows="3" placeholder="أكتب أي ملاحظة تهمّنا تساعدنا نخدمك أفضل"></textarea>
+
+        <div class="hint">
+          بعد فتح تيليجرام بالرسالة الجاهزة، اطلب “بيانات التحويل البنكي”، وبعد التحويل أرسل الإيصال لتأكيد اشتراكك بسرعة واللحاق بالخصم (100 ريال).
+        </div>
+
+        <div class="cta-row" style="margin-top:10px">
+          <button type="submit" class="btn btn-main">🚀 فتح تيليجرام برسالة جاهزة</button>
+          <a class="btn btn-ghost" href="https://t.me/Hilm_STEP1" target="_blank">أبغى أكلم المنسق مباشرة</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 أكاديمية عايد × مبادرة حُلم — جميع الحقوق محفوظة
+  </footer>
+
+</div>
+
 <script>
-  const COORDINATOR = "Hilm_STEP1"; // منسق الدورة
-
+  const COORDINATOR = "Hilm_STEP1";
   function buildMessage(){
-    const name  = document.getElementById('name').value.trim();
-    const exam  = document.getElementById('exam').value.trim();
-    const notes = document.getElementById('notes').value.trim();
+    const name = (document.getElementById('name').value || '').trim();
+    const exam = (document.getElementById('exam').value || '').trim();
+    const notes = (document.getElementById('notes').value || '').trim();
 
-    const msg =
-`اشتراك STEP
-السلام عليكم، أرغب بالانضمام للدورة الشاملة الحديثة لاختبار STEP 🌹
+    return `اشتراك STEP
+السلام عليكم، أرغب بالانضمام لدورة STEP الشاملة (عرض اليوم الوطني) 🇸🇦
 الاسم: ${name}
 موعد الاختبار: ${exam}
-ملاحظات/احتياج: ${notes || "لا يوجد"}
+ملاحظات: ${notes || "لا يوجد"}
 
-🔔 أرجو تزويدي ببيانات التحويل البنكي في أسرع وقت ليتم تأكيد اشتراكي مباشرة، وألحق على العرض الخاص (100 ريال بدل 400).
-أتعهد بإرسال الإيصال بعد التحويل لإتمام التفعيل الفوري ✅`;
-
-    return msg;
+فضلاً أرسل لي بيانات التحويل البنكي الآن لتأكيد اشتراكي بأسرع وقت واللحاق بالخصم (100 ريال بدل 400).
+سأرسل الإيصال مباشرة بعد التحويل ✅
+شكرًا لكم.`;
   }
-
   function sendToTelegram(){
-    const text = buildMessage();
-    const url = `https://t.me/${COORDINATOR}?text=${encodeURIComponent(text)}`;
-    // عرض المعاينة للمستخدم (للنسخ عند الحاجة)
-    const prev = document.getElementById('preview');
-    prev.style.display = 'block';
-    prev.value = text;
-
-    // محاولة فتح تيليجرام
-    window.open(url, '_blank');
-    return false; // منع الإرسال الفعلي للـ form
-  }
-
-  function copyMessage(){
-    const text = buildMessage();
-    navigator.clipboard.writeText(text).then(()=>{
-      alert("تم نسخ الرسالة. افتح تيليجرام والصقها في محادثة المنسق @Hilm_STEP1");
-      const prev = document.getElementById('preview');
-      prev.style.display = 'block';
-      prev.value = text;
-    });
+    const msg = buildMessage();
+    const url = `https://t.me/${COORDINATOR}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+    return false;
   }
 </script>
 </body>
