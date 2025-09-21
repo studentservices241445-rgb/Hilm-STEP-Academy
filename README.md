@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>أكاديمية عايد × مبادرة حُلم — دورة STEP الشاملة | عرض اليوم الوطني</title>
-<meta name="description" content="التسجيل في دورة STEP الشاملة يتم عبر نموذج موحّد — بدون مراسلة مباشرة. اشتراك مدى الحياة + تحديثات مجانية.">
+<meta name="description" content="دورة STEP الشاملة من أكاديمية عايد × مبادرة حُلم — شرح، نماذج مكررة محلولة، خطط مذاكرة مرنة، خصم اليوم الوطني 100 ريال بدل 400، اشتراك مدى الحياة وتحديثات مجانية." />
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
@@ -112,8 +112,6 @@
   .countdown{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
   .cd-item{min-width:74px;text-align:center;border:1px solid var(--stroke);border-radius:10px;padding:8px;background:rgba(7,43,33,.45)}
   .cd-item b{display:block;font-size:18px}
-
-  .alert{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:10px;margin-top:10px}
 </style>
 </head>
 <body>
@@ -127,14 +125,14 @@
 
   <header class="hero fade" id="top">
     <div class="saudi-motif" aria-hidden="true"></div>
-    <span class="ribbon">ينتهي 23 سبتمبر</span>
+    <span class="ribbon">اليوم الوطني</span>
     <div class="hero-head">
       <div class="logo" title="A">عايد</div>
       <div>
         <h1>أكاديمية عايد × مبادرة حُلم — دورة STEP الشاملة</h1>
-        <div class="sub">التسجيل يتم عبر النموذج الموحّد فقط — بدون مراسلة مباشرة. بنقره وحدة توصّلك رسالة للمنسق آليًا للتحقق وتأكيد الدفع ✨</div>
+        <div class="sub">شرح متكامل، تجميعات مكررة محلولة، خطط مرنة، ودعم مستمر حتى توصل +90 بإذن الله 🎯</div>
         <div class="cta-row">
-          <a class="btn btn-main" href="#register">🎫 قدّم طلب اشتراك</a>
+          <a class="btn btn-main" href="#register">🎫 اشترك الآن</a>
           <a class="btn btn-ghost" href="https://t.me/stepp2024" target="_blank">📢 قناة التحديثات</a>
           <a class="btn btn-ghost" href="https://t.me/ayedacadmeybot" target="_blank">📂 بوت المحتوى المجاني</a>
         </div>
@@ -170,19 +168,61 @@
         <li>خطط مذاكرة مرنة تناسب وقتك (مكثفة / متدرجة).</li>
         <li>اشتراك مدى الحياة + تحديثات مجانية — بدون أي رسوم لاحقة.</li>
       </ul>
-      <div class="alert">سبب اختلاف السعر عن الموقع: نقدّم المحتوى عبر تيليجرام وإدارة داخلية بلا عمولات — فتدفع أقل مع نفس الجودة والتحديثات.</div>
+      <div class="badges" style="margin-top:8px">
+        <div class="badge">مدى الحياة</div>
+        <div class="badge">تحديثات مجانية</div>
+        <div class="badge">دعم سريع</div>
+        <div class="badge">محتوى مجرّب</div>
+      </div>
     </div>
     <div class="card">
-      <h2>السعر — 🇸🇦 عرض اليوم الوطني</h2>
+      <h2>السعر والخصم — 🇸🇦 اليوم الوطني</h2>
       <div class="price">
         <s>400 ريال</s>
         <span class="now">100 ريال فقط</span>
-        <span class="pill">حتى 23 سبتمبر</span>
+        <span class="pill">لفترة محدودة</span>
       </div>
-      <ul>
-        <li>الدفع مرة واحدة — اشتراكك يبقى مدى الحياة.</li>
-        <li>التحديثات للمشتركين مجانًا أول بأول.</li>
-      </ul>
+      <p class="reason">
+        <strong>ليه السعر مختلف عن الموقع؟</strong><br>
+        لأننا نقدّم المحتوى عبر تيليجرام مباشرة بإدارة داخلية وبدون عمولات،
+        فنقلّل التكلفة على الطالب مع الحفاظ على جودة الشرح والتحديثات. الهدف: تبدأ بسهولة وبدون عوائق مادية.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-main" href="#register">🎯 سجّل الآن</a>
+        <a class="btn btn-ghost" href="https://t.me/Hilm_STEP1" target="_blank">💬 تواصل مع المنسق</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section fade">
+    <h2>خطة أول 48 ساعة (تدفئة سريعة)</h2>
+    <div class="card grid grid-2">
+      <div>
+        <div class="step">
+          <b>اليوم 1 — صباحًا:</b> نظرة على هيكل الاختبار + اختبار تمهيدي قصير لمعرفة مستواك.
+        </div>
+        <div class="step">
+          <b>اليوم 1 — مساءً:</b> قواعد أساسية مركّزة + كويز قصير + ملخصات الـ PDF.
+        </div>
+      </div>
+      <div>
+        <div class="step">
+          <b>اليوم 2 — صباحًا:</b> قراءة (قطع متكررة) + أسئلة رئيسية والمفردات.
+        </div>
+        <div class="step">
+          <b>اليوم 2 — مساءً:</b> استماع (حوار/مقاطع قصيرة) + ملاحظات على الأخطاء الشائعة.
+        </div>
+      </div>
+    </div>
+    <div class="hint">بعدها نكمل حسب خطتك (مكثفة / متدرجة) إلى يوم الاختبار.</div>
+  </section>
+
+  <section class="section fade">
+    <h2>تجارب طلاب</h2>
+    <div class="card grid grid-3">
+      <div class="quote">“كنت ضايع بين مصادر كثيرة. مع الدورة فهمت النمط ومشيت على الخطة ورفعت درجتي لـ <b>84</b>.” — خالد</div>
+      <div class="quote">“الملخصات القصيرة + التجميعات المحلولة أنقذتني قبل الاختبار، جبت <b>+90</b> ولله الحمد.” — نورة</div>
+      <div class="quote">“اشتراك مدى الحياة فعليًا فادني، اختبرت بعد 4 شهور وكل التحديثات كانت جاهزة.” — فهد</div>
     </div>
   </section>
 
@@ -190,24 +230,64 @@
     <h2>روابط مهمة</h2>
     <div class="card">
       <div class="cta-row">
+        <a class="btn btn-main" href="https://t.me/Hilm_STEP1" target="_blank">💬 حساب المنسق الرسمي</a>
         <a class="btn btn-ghost" href="https://t.me/stepp2024" target="_blank">📢 قناة المشتركين والتحديثات</a>
         <a class="btn btn-ghost" href="https://t.me/ayedacadmeybot" target="_blank">📂 بوت المحتوى المجاني</a>
       </div>
-      <div class="hint">* يتم الرد حسب أولوية طلبات الاشتراك الواردة من النموذج.</div>
+      <div class="hint">* الأولوية بالرد للطلاب اللي يرسلون “اشتراك STEP” وجادّين بالتسجيل.</div>
+    </div>
+  </section>
+
+  <section class="section fade">
+    <h2>الأسئلة الشائعة</h2>
+    <div class="card faq">
+      <h3>هل الاشتراك محدد المدة؟</h3>
+      <p>لا. الاشتراك مدى الحياة، وكل التحديثات توصلك مجانًا.</p>
+
+      <h3>لو ما حجزت اختباري إلا بعد أشهر؟</h3>
+      <p>عادي، اشترك الآن وجهّز براحتك. المحتوى ثابت معك، وأي تحديث جديد يوصلك تلقائيًا.</p>
+
+      <h3>أقدر أشوف مثال من المحتوى؟</h3>
+      <p>إيه، زور <a href="https://t.me/ayedacadmeybot" target="_blank" style="color:#b7ffcf">بوت المحتوى المجاني</a> وشوف بنفسك.</p>
+
+      <h3>مقاطع خاصة على اليوتيوب؟</h3>
+      <p>لو واجهت “خاص”، عندك نفس المحتوى مرتب داخل الدرايف والقناة. نحافظ على الوصول بأكثر من مسار.</p>
+
+      <h3>هل فيه استرجاع؟</h3>
+      <p>بما أن الوصول للمحتوى مباشر بعد الدفع، الاسترجاع غير متاح. نضمن لك جودة المحتوى والدعم.</p>
+    </div>
+  </section>
+
+  <section class="section fade" id="how">
+    <h2>طريقة الاشتراك (خطوات سهلة)</h2>
+    <div class="card steps">
+      <div class="step"><b>أرسل رسالة جاهزة</b> عبر النموذج أدناه أو مباشرة لمنسق الدورة بكلمة “اشتراك STEP”.</div>
+      <div class="step"><b>استلم بيانات التحويل البنكي</b> من المنسق.</div>
+      <div class="step"><b>حوِّل 100 ريال</b> (عرض اليوم الوطني) وأرسل الإيصال + اسمك + موعد الاختبار.</div>
+      <div class="step"><b>خلال دقائق</b> توصلك روابط القنوات/الدرايف وتبدأ مذاكرتك فورًا.</div>
+    </div>
+  </section>
+
+  <section class="section fade">
+    <h2>تنبيهات مهمة</h2>
+    <div class="card">
+      <ul>
+        <li>لضمان سرعة التفعيل: بعد الدفع أرسل الإيصال + اسمك + موعد اختبارك.</li>
+        <li>بسبب ضغط الرسائل، الرد يتم أولًا على من يرسل “اشتراك STEP” وجادّ بالاشتراك.</li>
+        <li>كل التحديثات الجديدة تنزل للمشتركين تلقائيًا بدون أي رسوم إضافية.</li>
+      </ul>
     </div>
   </section>
 
   <section class="section fade" id="register">
-    <h2>نموذج التسجيل الموحّد</h2>
+    <h2>نموذج التسجيل السريع</h2>
     <div class="card">
-      <form id="joinForm" autocomplete="on">
-        <!-- Honeypot لمنع السبام -->
-        <input type="text" id="company" name="company" style="position:absolute; left:-9999px" tabindex="-1" autocomplete="off">
+      <form onsubmit="return sendToTelegram()" autocomplete="on">
         <label for="name">الاسم الكامل</label>
-        <input id="name" name="name" required placeholder="مثال: نواف العتيبي" />
+        <input id="name" required placeholder="مثال: نواف العتيبي" />
 
         <label for="exam">موعد الاختبار</label>
-        <select id="exam" name="exam">
+        <select id="exam">
           <option>ما حجزت بعد</option>
           <option>هذا الشهر</option>
           <option>الشهر القادم</option>
@@ -215,16 +295,15 @@
         </select>
 
         <label for="notes">ملاحظات/احتياجات (اختياري)</label>
-        <textarea id="notes" name="notes" rows="3" placeholder="أكتب أي ملاحظة تساعدنا نخدمك أفضل (مثال: أحتاج خطة مكثفة)"></textarea>
+        <textarea id="notes" rows="3" placeholder="أكتب أي ملاحظة تساعدنا نخدمك أفضل (مثال: أحتاج خطة مكثفة)"></textarea>
 
-        <div class="alert">
-          بعد إرسال الطلب، بيرسل لك النظام <b>بيانات التحويل البنكي</b> في تيليجرام. بعد التحويل:
-          <br>↳ أرسل الإيصال علشان نؤكد اشتراكك بسرعة وتلحق الخصم (100 ريال بدل 400) ✅
+        <div class="hint">
+          بعد فتح تيليجرام بالرسالة الجاهزة، اطلب “بيانات التحويل البنكي”، وبعد التحويل أرسل الإيصال لتأكيد اشتراكك بسرعة واللحاق بالخصم (100 ريال بدل 400).
         </div>
 
         <div class="cta-row" style="margin-top:10px">
-          <button type="submit" class="btn btn-main" id="submitBtn">🚀 إرسال الطلب</button>
-          <span id="status" class="hint" aria-live="polite"></span>
+          <button type="submit" class="btn btn-main">🚀 فتح تيليجرام برسالة جاهزة</button>
+          <a class="btn btn-ghost" href="https://t.me/Hilm_STEP1" target="_blank">أبغى أكلم المنسق مباشرة</a>
         </div>
       </form>
     </div>
@@ -238,76 +317,54 @@
 <div class="sticky-cta">
   <span class="tag">🇸🇦 عرض اليوم الوطني</span>
   <span>100 ريال بدل 400 — مدى الحياة + تحديثات مجانية</span>
-  <a class="btn btn-main" href="#register">قدّم طلب اشتراك</a>
+  <a class="btn btn-main" href="#register">سجّل الآن</a>
+  <a class="btn btn-ghost" href="https://t.me/Hilm_STEP1" target="_blank">تواصل مع المنسق</a>
 </div>
 <button class="topbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</button>
 
 <script>
-  // إظهار العناصر مع التمرير
+  // إظهار العناصر مع التمرير (RTL friendly)
   const faders = document.querySelectorAll('.fade');
   const io = new IntersectionObserver(entries=>{
     entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); }});
   },{threshold:.12});
   faders.forEach(el=>io.observe(el));
 
-  // عدّاد ينتهي 23 سبتمبر 2025
+  // عدّاد: ينتهي 23 سبتمبر (حدّث السنة إذا احتجت)
   const DEADLINE = new Date("2025-09-23T23:59:59");
   const dd=document.getElementById('dd'), hh=document.getElementById('hh'), mm=document.getElementById('mm'), ss=document.getElementById('ss');
   function pad(n){return n<10?'0'+n:n}
   function tick(){
     const now=new Date(), t=DEADLINE-now;
-    if(t<=0){ if(dd) dd.textContent=hh.textContent=mm.textContent=ss.textContent="00"; return;}
+    if(t<=0){dd.textContent=hh.textContent=mm.textContent=ss.textContent="00"; return;}
     const d=Math.floor(t/86400000), h=Math.floor(t%86400000/3600000), m=Math.floor(t%3600000/60000), s=Math.floor(t%60000/1000);
-    if(dd){ dd.textContent=pad(d); hh.textContent=pad(h); mm.textContent=pad(m); ss.textContent=pad(s); }
+    dd.textContent=pad(d); hh.textContent=pad(h); mm.textContent=pad(m); ss.textContent=pad(s);
   }
   tick(); setInterval(tick,1000);
 
-  // إرسال للنقطة الطرفية (Apps Script)
-  const WEBHOOK = "YOUR_WEBHOOK_URL"; // ← استبدلها برابط نشر Google Apps Script (الويب هوك)
+  // رسالة تيليجرام الجاهزة
+  const COORDINATOR = "Hilm_STEP1";
+  function buildMessage(){
+    const name = (document.getElementById('name').value || '').trim();
+    const exam = (document.getElementById('exam').value || '').trim();
+    const notes = (document.getElementById('notes').value || '').trim();
 
-  const form = document.getElementById('joinForm');
-  const statusEl = document.getElementById('status');
-  const submitBtn = document.getElementById('submitBtn');
+    return `اشتراك STEP
+السلام عليكم، أرغب بالانضمام لدورة STEP الشاملة (عرض اليوم الوطني) 🇸🇦
+الاسم: ${name}
+موعد الاختبار: ${exam}
+ملاحظات: ${notes || "لا يوجد"}
 
-  form?.addEventListener('submit', async (e)=>{
-    e.preventDefault();
-
-    // Honeypot
-    if (document.getElementById('company').value.trim() !== "") {
-      return; // تجاهل سبام
-    }
-
-    const payload = {
-      name: document.getElementById('name').value.trim(),
-      exam: document.getElementById('exam').value,
-      notes: document.getElementById('notes').value.trim(),
-      source: "STEP-Website-Form"
-    };
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = "جارٍ الإرسال…";
-    statusEl.textContent = "";
-
-    try{
-      const res = await fetch(WEBHOOK, {
-        method:"POST",
-        headers:{ "Content-Type":"application/json" },
-        body: JSON.stringify(payload)
-      });
-      if(!res.ok) throw new Error("failed");
-      const data = await res.json();
-
-      // نجاح
-      form.reset();
-      submitBtn.textContent = "تم الإرسال ✅";
-      statusEl.textContent = "وصل طلبك، وبنوصل لك بيانات التحويل البنكي على تيليجرام للتأكيد.";
-    }catch(err){
-      submitBtn.textContent = "إرسال الطلب";
-      statusEl.textContent = "تعذّر الإرسال. جرّب لاحقًا أو حدّث الصفحة.";
-    }finally{
-      submitBtn.disabled = false;
-    }
-  });
+فضلاً أرسل لي بيانات التحويل البنكي الآن لتأكيد اشتراكي بأسرع وقت واللحاق بالخصم (100 ريال بدل 400).
+سأرسل الإيصال مباشرة بعد التحويل ✅
+شكرًا لكم.`;
+  }
+  function sendToTelegram(){
+    const msg = buildMessage();
+    const url = `https://t.me/${COORDINATOR}?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+    return false;
+  }
 </script>
 </body>
 </html>
