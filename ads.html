@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>التعاون الإعلاني | STEP Academy</title>
+  <meta name="description" content="انضم كمعلن رسمي لدورة STEP الشاملة الحديثة. عمولات مجزية، مواد إعلانية جاهزة، ودعم مباشر.">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- خط عربي أنيق -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#0b1f16;          /* أخضر داكن */
+      --card:#0f2a1d;        /* طبقة أغمق */
+      --brand:#0ea572;       /* أخضر رئيسي */
+      --brand-2:#18c48f;     /* أخضر فاتح */
+      --gold:#d4b26f;        /* ذهبي */
+      --text:#e7f5ee;        /* نص فاتح */
+      --muted:#a6c6b8;       /* نص ثانوي */
+      --danger:#ff5d5d;
+      --shadow: 0 10px 30px rgba(0,0,0,.2);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(145deg,#07170f,#0b1f16 35%,#0e251b 70%);color:var(--text);font-family:"Cairo",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+    a{color:var(--brand-2);text-decoration:none}
+    a:hover{opacity:.9}
+    .container{width:min(1100px,92%);margin-inline:auto}
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(140%) blur(8px);
+      background:rgba(11,31,22,.75);
+      border-bottom:1px solid rgba(212,178,111,.18);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px
+    }
+    .logo{
+      width:42px;height:42px;display:grid;place-items:center;border-radius:12px;
+      background:radial-gradient(120px 60px at 70% 30%, rgba(24,196,143,.45), transparent 60%),
+                 linear-gradient(140deg, rgba(14,165,114,.9), rgba(24,196,143,.65));
+      box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.12)
+    }
+    .logo svg{filter:drop-shadow(0 4px 12px rgba(0,0,0,.35))}
+    .nav a.link{padding:8px 14px;border-radius:10px;color:var(--text)}
+    .cta{
+      background:linear-gradient(90deg,var(--brand),var(--brand-2));
+      color:#052116;font-weight:800;border:none;border-radius:12px;padding:10px 16px;box-shadow:0 8px 22px rgba(24,196,143,.25);
+    }
+    .cta:hover{transform:translateY(-1px)}
+    /* HERO */
+    .hero{
+      padding:48px 0 28px;
+    }
+    .hero-card{
+      background:
+        radial-gradient(1000px 400px at 100% -20%, rgba(212,178,111,.10), transparent 40%),
+        linear-gradient(180deg, rgba(14,37,28,.85), rgba(10,28,20,.85));
+      border:1px solid rgba(212,178,111,.20);
+      border-radius:28px;padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+    }
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(212,178,111,.14);
+      border:1px solid rgba(212,178,111,.3);
+      color:var(--gold);padding:6px 12px;border-radius:999px;font-weight:700;font-size:.95rem
+    }
+    h1{margin:14px 0 10px;font-size:2rem;line-height:1.2}
+    .subtitle{color:var(--muted);font-weight:600}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .ghost{
+      background:transparent;border:1px solid rgba(212,178,111,.35);
+      color:var(--gold);padding:10px 16px;border-radius:12px;font-weight:700
+    }
+    /* FEATURES */
+    .grid{display:grid;gap:16px}
+    @media (min-width:900px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} }
+    .card{
+      background:linear-gradient(180deg, rgba(18,45,33,.65), rgba(12,32,24,.65));
+      border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:20px;box-shadow:var(--shadow)
+    }
+    .card h3{margin:0 0 6px}
+    .muted{color:var(--muted)}
+    /* FORM */
+    .form-wrap{
+      margin-top:18px;padding:20px;border-radius:20px;background:linear-gradient(180deg, rgba(18,45,33,.7), rgba(10,26,19,.7));
+      border:1px solid rgba(212,178,111,.22);box-shadow:var(--shadow)
+    }
+    .form-grid{display:grid;gap:12px}
+    @media (min-width:850px){ .form-grid{grid-template-columns:1fr 1fr} .form-grid .full{grid-column:1 / -1} }
+    .field{display:flex;flex-direction:column;gap:6px}
+    label{font-weight:700}
+    input,select,textarea{
+      background:#0b2118;border:1px solid rgba(212,178,111,.18);
+      color:var(--text);border-radius:12px;padding:12px 14px;outline:none
+    }
+    input::placeholder,textarea::placeholder{color:#7fb09d}
+    textarea{min-height:110px;resize:vertical}
+    .note{font-size:.95rem;color:var(--muted)}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .small{font-size:.9rem}
+    .success{display:none;margin-top:10px;color:#b8ffd9}
+    .error{display:none;margin-top:10px;color:var(--danger)}
+    /* FAQ + HOW */
+    .section{margin:26px 0}
+    .section h2{margin:0 0 8px;font-size:1.4rem}
+    .list{display:grid;gap:10px}
+    .list .li{
+      background:linear-gradient(180deg, rgba(18,45,33,.55), rgba(12,32,24,.6));
+      border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px
+    }
+    /* FOOTER */
+    footer{margin:26px 0 40px;color:var(--muted);font-size:.95rem}
+    .pill{display:inline-block;border:1px solid rgba(255,255,255,.1);padding:6px 10px;border-radius:999px}
+    .divider{height:1px;background:linear-gradient(90deg, transparent, rgba(212,178,111,.25), transparent);margin:18px 0}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-label="STEP Academy logo">
+          <!-- أيقونة شعار بسيطة -->
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#052116" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2l8 4.5v9L12 20 4 15.5v-9L12 2z" fill="#d4b26f"/>
+            <path d="M12 5l5 2.8v5.6L12 16l-5-2.6V7.8L12 5z" fill="#0ea572"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-weight:800">STEP Academy</div>
+          <div class="muted" style="font-size:.9rem">التعاون الإعلاني — معلن رسمي</div>
+        </div>
+      </div>
+
+      <nav style="display:flex;gap:6px;align-items:center">
+        <a class="link" href="./index.html">الصفحة الرئيسية</a>
+        <a class="link" href="./ads.html" aria-current="page" style="border-bottom:2px solid var(--gold)">المعلنين</a>
+        <a class="cta" href="https://t.me/STEP_Academy100" target="_blank" rel="noopener">القناة الرسمية</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-card">
+      <span class="badge">برنامج الشراكة الإعلانية — عمولات مجزية</span>
+      <h1>انضم <span style="color:var(--gold)">كمُعلن رسمي</span> لدورة <span style="color:var(--brand-2)">STEP الشاملة الحديثة</span></h1>
+      <p class="subtitle">
+        نوفر لك مواد جاهزة للنشر، دعم مباشر، وتتبع لنتائجك. هدفنا وصول الطلاب للمعلومة الصحيحة بأقل تكلفة وبطريقة موثوقة.
+      </p>
+      <div class="hero-actions">
+        <a class="cta" href="#form">قدّم الآن</a>
+        <a class="ghost" href="#how">كيف تعمل الشراكة؟</a>
+        <a class="ghost" href="#faq">الأسئلة الشائعة</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="container">
+    <div class="grid cols-3">
+      <div class="card">
+        <h3>مواد إعلانية جاهزة</h3>
+        <p class="muted">نصوص وصور وعبارات متوافقة مع سياسات تيليجرام، قابلة للنسخ الفوري والنشر.</p>
+      </div>
+      <div class="card">
+        <h3>عمولات واضحة</h3>
+        <p class="muted">نسبة عادلة لكل اشتراك موثق قادم عبرك، مع توثيق زمني ورسمي.</p>
+      </div>
+      <div class="card">
+        <h3>دعم ومتابعة</h3>
+        <p class="muted">قناة تواصل خاصة للمعلنين + رد سريع على الاستفسارات الفنية والإدارية.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="container section">
+    <h2>كيف تتم الشراكة الإعلانية؟</h2>
+    <div class="list">
+      <div class="li"><b>1) قدّم طلبك:</b> عبّئ نموذج المعلنين بالأسفل بمعلومات قناتك/حسابك.</div>
+      <div class="li"><b>2) استلام الحزمة:</b> تحصل على باقة مواد إعلانية جاهزة + تعليمات النشر.</div>
+      <div class="li"><b>3) انشر وتابع:</b> تنشر المنشورات وفق الصيغة المعتمدة وتتلقى تأكيدات الاشتراكات المرتبطة بك.</div>
+      <div class="li"><b>4) التصفية والعمولة:</b> يتم احتساب العمولات بشكل دوري بحسب الاشتراكات الموثقة.</div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section id="form" class="container section">
+    <h2>نموذج انضمام — المعلنين الرسميين</h2>
+    <p class="note">املأ البيانات التالية. عند الضغط على «إرسال الطلب» سيُفتَح تيليجرام برسالة جاهزة للمنسق تتضمن معلوماتك.</p>
+
+    <div class="form-wrap">
+      <form id="adsForm" class="form-grid" onsubmit="handleSubmit(event)">
+        <div class="field">
+          <label for="name">الاسم الكامل</label>
+          <input id="name" name="name" type="text" placeholder="مثال: محمد بن عبدالله" required />
+        </div>
+
+        <div class="field">
+          <label for="platform">المنصة</label>
+          <select id="platform" name="platform" required>
+            <option value="" disabled selected>اختر المنصة</option>
+            <option>قناة تيليجرام</option>
+            <option>بوت تيليجرام</option>
+            <option>إنستغرام</option>
+            <option>سناب شات</option>
+            <option>تيك توك</option>
+            <option>تويتر (X)</option>
+            <option>أخرى</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="link">رابط القناة/الحساب</label>
+          <input id="link" name="link" type="url" placeholder="مثال: https://t.me/YourChannel" required />
+        </div>
+
+        <div class="field">
+          <label for="followers">عدد المتابعين التقريبي</label>
+          <input id="followers" name="followers" type="number" min="0" placeholder="مثال: 12000" required />
+        </div>
+
+        <div class="field full">
+          <label for="notes">ملاحظات أو خبرة سابقة بالإعلانات (اختياري)</label>
+          <textarea id="notes" name="notes" placeholder="اذكر أي تفاصيل تهمنا: فئات جمهورك، مناطق الاستهداف، أفضل أوقات النشر..."></textarea>
+        </div>
+
+        <div class="actions full">
+          <button class="cta" type="submit">إرسال الطلب عبر تيليجرام</button>
+          <button class="ghost small" type="button" onclick="copyPreview()">نسخ نص الطلب</button>
+          <a class="ghost small" href="https://t.me/Hilm_STEP1" target="_blank" rel="noopener">التواصل اليدوي مع المنسق</a>
+        </div>
+
+        <div id="success" class="success">✅ تم فتح تيليجرام برسالة جاهزة. إذا لم يفتح، استخدم زر «نسخ نص الطلب» ثم ألصقه يدويًا في المحادثة.</div>
+        <div id="error" class="error">حدث خطأ غير متوقع. جرّب زر «نسخ نص الطلب» ثم أرسل الرسالة يدويًا للمنسق.</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container section">
+    <h2>الأسئلة الشائعة</h2>
+    <div class="list">
+      <div class="li">
+        <b>هل هناك حد أدنى للمتابعين؟</b><br>
+        لا يوجد رقم ثابت. نقبل القنوات/الحسابات الجادة ذات النشاط الحقيقي والتفاعل المناسب.
+      </div>
+      <div class="li">
+        <b>كيف تُحتسب العمولات؟</b><br>
+        يتم ربط كل اشتراك موثّق قادم عبرك بحسابك، وتُصرف العمولات وفق سياسة واضحة تُرسل لك بعد القبول.
+      </div>
+      <div class="li">
+        <b>هل المواد الإعلانية متوافقة مع سياسات تيليجرام؟</b><br>
+        نعم، نوفّر صيغ نصية وبصرية مطابقة للإرشادات التحريرية وسياسة الإعلانات.
+      </div>
+      <div class="li">
+        <b>هل تُوفّرون دعمًا للمعلنين؟</b><br>
+        بالتأكيد. يوجد قناة خاصة ودعم مباشر للإجابة على الاستفسارات وتسليم المواد وتحديثها.
+      </div>
+    </div>
+  </section>
+
+  <div class="container divider"></div>
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <div class="pill">© STEP Academy — جميع الحقوق محفوظة</div>
+    <div style="margin-top:10px">
+      🔗 القناة الرسمية: <a href="https://t.me/STEP_Academy100" target="_blank" rel="noopener">@STEP_Academy100</a> |
+      🌐 موقع الدورة: <a href="https://studentservices241445-rgb.github.io/Hilm-STEP-Academy/" target="_blank" rel="noopener">زيارة الموقع</a>
+    </div>
+  </footer>
+
+  <script>
+    const tgHandle = "Hilm_STEP1"; // منسق الشراكات
+
+    function buildMessage(){
+      const name = document.getElementById('name').value.trim();
+      const platform = document.getElementById('platform').value.trim();
+      const link = document.getElementById('link').value.trim();
+      const followers = document.getElementById('followers').value.trim();
+      const notes = document.getElementById('notes').value.trim();
+
+      const msg =
+`السلام عليكم،
+أرغب بالانضمام كمُعلن رسمي لدورة STEP الشاملة الحديثة.
+
+الاسم: ${name}
+المنصة: ${platform}
+رابط القناة/الحساب: ${link}
+عدد المتابعين التقريبي: ${followers}
+ملاحظات إضافية: ${notes || "لا يوجد"}
+
+أرجو تزويدي بحزمة المواد الإعلانية وآلية احتساب العمولات، وشكرًا.`;
+
+      return msg;
+    }
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const success = document.getElementById('success');
+      const error = document.getElementById('error');
+      success.style.display = 'none';
+      error.style.display = 'none';
+
+      const text = encodeURIComponent(buildMessage());
+      // فتح تيليجرام مباشر (يدعم الروابط العميقة)
+      const tgUrl = `https://t.me/${tgHandle}?start=`;
+      // بعض العملاء لا يدعمون start للنقاشات الخاصة، لذلك نستخدم tg://resolve مع text إن توفّر
+      const deepLink = `tg://resolve?domain=${tgHandle}&text=${text}`;
+      const webLink  = `https://t.me/${tgHandle}?text=${text}`;
+
+      // نحاول فتح العميل المحلي أولًا:
+      const opened = window.open(deepLink, '_blank');
+      if(!opened || opened.closed || typeof opened.closed == 'undefined'){
+        // fallback للويب
+        window.open(webLink, '_blank');
+      }
+      success.style.display = 'block';
+    }
+
+    async function copyPreview(){
+      try{
+        await navigator.clipboard.writeText(buildMessage());
+        const success = document.getElementById('success');
+        success.textContent = "✅ تم نسخ نص الطلب. الصقه يدويًا في مراسلة المنسق على تيليجرام.";
+        success.style.display = 'block';
+      }catch(e){
+        const error = document.getElementById('error');
+        error.textContent = "تعذر نسخ النص. انسخ يدويًا بعد تحديده.";
+        error.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
