@@ -244,6 +244,7 @@
     initReceiptUpload();
     initResourcesUpload();
     initNavigation();
+    initComplaintForm();
   });
 
   /**
@@ -489,5 +490,86 @@
         navList.classList.toggle("open");
       });
     }
+
+      /**
+       * تهيئة نموذج التواصل والشكاوى.
+       */
+      function initComplaintForm() {
+        const formEl = document.getElementById("complaintForm");
+        if (!formEl) return;
+        const nameInput = document.getElementById("complaintName");
+        const methodSelect = document.getElementById(
+          "complaintContactMethod"
+        );
+        const contactInput = document.getElementById(
+          "complaintContactLink"
+        );
+        const typeSelect = document.getElementById("complaintType");
+        const messageInput = document.getElementById("complaintMessage");
+        const sendBtn = document.getElementById("sendComplaintBtn");
+        const copyBtn = document.getElementById("copyComplaintBtn");
+        // تحديث placeholder حسب نوع وسيلة التواصل
+        methodSelect.addEventListener("change", function () {
+          const method = this.value;
+          if (method === "تلجرام") {
+            contactInput.placeholder = "مثال: @Username";
+          } else if (method === "واتساب") {
+            contactInput.placeholder = "مثال: +966123456789";
+          } else if (method === "إيميل") {
+            contactInput.placeholder = "مثال: name@example.com";
+          } else {
+            contactInput.placeholder = "";
+          }
+        });
+        // بناء نص الرسالة للشكوى/التواصل
+        function buildComplaintMessage() {
+          const name = nameInput.value.trim();
+          const method = methodSelect.value;
+          const contact = contactInput.value.trim();
+          const type = typeSelect.value;
+          const details = messageInput.value.trim();
+          let msg = "";
+          // العنوان حسب نوع الرسالة
+          if (type === "شكوى") {
+            msg += "شكوى\n";
+          } else if (type === "اقتراح") {
+            msg += "اقتراح\n";
+          } else if (type === "استفسار") {
+            msg += "استفسار\n";
+          } else {
+            msg += "رسالة\n";
+          }
+          msg += `الاسم الكامل: ${name}\n`;
+          msg += `وسيلة التواصل المفضلة: ${method}\n`;
+          if (contact !== "") {
+            msg += `رابط حساب التواصل: ${contact}\n`;
+          }
+          msg += `نوع الرسالة: ${type}\n`;
+          msg += `التفاصيل: ${details}\n`;
+          msg += "تم إرسال هذه الرسالة من نموذج التواصل في الموقع الرسمي.\n";
+          return msg;
+        }
+        sendBtn.addEventListener("click", function () {
+          if (!formEl.checkValidity()) {
+            formEl.reportValidity();
+            return;
+          }
+          const message = buildComplaintMessage();
+          const encoded = encodeURIComponent(message);
+          const url =
+            `https://t.me/${encodeURIComponent(cfg.coordinator.telegramUser)}?text=${encoded}`;
+          window.open(url, "_blank");
+          showToast("تم رفع رسالتك وسيتم الرد عليك قريبًا");
+        });
+        copyBtn.addEventListener("click", function () {
+          if (!formEl.checkValidity()) {
+            formEl.reportValidity();
+            return;
+          }
+          const message = buildComplaintMessage();
+          copyToClipboard(message);
+          showToast("تم نسخ نص الرسالة");
+        });
+      }
   }
 })();
