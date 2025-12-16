@@ -216,5 +216,147 @@
   document.addEventListener("DOMContentLoaded", function () {
     initPaymentSection();
     initRegisterForm();
+    initAchievements();
+    initSubscriberCounter();
+    initNotifications();
+    initReceiptUpload();
   });
+
+  /**
+   * ملء قائمة الإنجازات بعينات تمثيلية.
+   */
+  function initAchievements() {
+    const achievements = [
+      { name: "عبدالرحمن", region: "الرياض", score: 95 },
+      { name: "فاطمة", region: "جدة", score: 92 },
+      { name: "يوسف", region: "الدمام", score: 88 },
+      { name: "سارة", region: "المدينة", score: 90 },
+      { name: "أحمد", region: "القصيم", score: 85 },
+      { name: "ريم", region: "أبها", score: 93 },
+      { name: "محمد", region: "تبوك", score: 87 },
+      { name: "نورة", region: "حائل", score: 91 }
+    ];
+    const container = document.getElementById("achievementsGrid");
+    if (!container) return;
+    achievements.forEach((item) => {
+      const div = document.createElement("div");
+      div.className = "achievement-item";
+      div.innerHTML = `
+        <span class="student-name">${item.name}</span>
+        <span class="student-region">${item.region}</span>
+        <span class="student-score">${item.score}</span>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  /**
+   * عدّاد المشتركين مع زيادة تدريجية ومحاكاة لانضمام أعضاء جدد.
+   */
+  function initSubscriberCounter() {
+    const countEl = document.getElementById("subscriberCount");
+    if (!countEl) return;
+    // قيمة مستهدفة تقديرية؛ يمكن تعديلها حسب البيانات الفعلية
+    // نستخدم قيمة أكبر لعدد المشتركين لزيادة الثقة بشكل تقديري
+    // يمكن تعديل target بسهولة لاحقاً إذا توفرت أرقام فعلية
+    const target = 5200; // رقم تقديري أكبر من 100 كما طلب المستخدم
+    let current = Math.floor(target * 0.8);
+    // الخطوة تعتمد على الفرق بين العدد الحالي والهدف وتقسيمه على عدد التحديثات
+    const step = Math.max(1, Math.ceil((target - current) / 150));
+    function updateDisplay(value) {
+      countEl.textContent = value.toLocaleString("ar-EG");
+    }
+    updateDisplay(current);
+    const animInterval = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        current = target;
+        updateDisplay(current);
+        clearInterval(animInterval);
+        // بعد الوصول، زد الرقم كل 30 ثانية بمحاكاة انضمام عضو جديد
+        setInterval(() => {
+          // زيادة عشوائية بسيطة لمحاكاة انضمام أعضاء جدد
+          current += Math.floor(Math.random() * 5) + 1;
+          updateDisplay(current);
+        }, 45000);
+      } else {
+        updateDisplay(current);
+      }
+    }, 80);
+  }
+
+  /**
+   * إنشاء إشعارات عشوائية وإظهارها بشكل دوري.
+   */
+  function initNotifications() {
+    const container = document.getElementById("notificationsContainer");
+    if (!container) return;
+    const messages = [
+      "انضم أحمد من الرياض إلى الدورة",
+      "نورة حققت درجة 90 في الاختبار",
+      "يوسف من جدة سجّل الآن",
+      "سارة من الدمام رفعت درجتها إلى 85",
+      "محمد أنهى خطة المذاكرة الأسبوعية",
+      "ريم حصلت على درجة 92",
+      "عبدالله بدأ اختبار تحديد المستوى",
+      "لطيفة من القصيم سجّلت للتو",
+      // رسائل إضافية لزيادة تنوع الإشعارات وعددها
+      "ليلى من أبها حققت درجة 88",
+      "عبدالرحمن سجّل في الخطة الشهرية",
+      "فاطمة أنهت جميع النماذج المكررة",
+      "ياسر من مكة رفع درجته إلى 91",
+      "خالد من جدة شارك تجربته بنجاح",
+      "سعد بدأ دراسة قسم القراءة",
+      "منى أكملت خطة الثلاثة أيام بنجاح",
+      "مها حققت درجة 95",
+      "خديجة من الدمام سجلت للتو",
+      "عبدالعزيز رفع درجته إلى 80",
+      "بدر أنهى خطة الأسبوع بنجاح",
+      "مشاعل من الطائف حققت درجة 89",
+      "تركي من القصيم بدأ التدريب على الاستماع",
+      "هاجر رفعت درجتها إلى 83",
+      "ريم من الرياض رفعت درجتها إلى 94",
+      "زياد أنهى المختصر الذهبي",
+      "غادة سجلت في خطة الشهر",
+      "سمر حصلت على درجة 90",
+      "بندر من المدينة سجّل الآن",
+      "هند بدأت خطة الأسبوع",
+      "سهى أكملت قراءة جميع القطع المتكررة",
+      "لينا من الدمام رفعت درجتها إلى 87"
+    ];
+    function showNotification(msg) {
+      const item = document.createElement("div");
+      item.className = "notification-item";
+      item.textContent = msg;
+      container.appendChild(item);
+      // إزالة الإشعار بعد 6 ثوانٍ مع تأثير اختفاء
+      setTimeout(() => {
+        item.classList.add("fade-out");
+        setTimeout(() => {
+          container.removeChild(item);
+        }, 500);
+      }, 6000);
+    }
+    // إظهار إشعار أولي
+    showNotification(messages[Math.floor(Math.random() * messages.length)]);
+    // إظهار إشعار جديد كل 15 ثانية
+    setInterval(() => {
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      showNotification(msg);
+    }, 15000);
+  }
+
+  /**
+   * تهيئة رفع الإيصال وإشعار المستخدم بعد اختيار ملف.
+   */
+  function initReceiptUpload() {
+    const input = document.getElementById("receiptUpload");
+    if (!input) return;
+    input.addEventListener("change", function () {
+      if (input.files && input.files.length > 0) {
+        const names = Array.from(input.files).map((f) => f.name).join(", ");
+        showToast(`تم اختيار: ${names}. يرجى إرفاق الإيصال في تيليجرام عند الإرسال.`);
+      }
+    });
+  }
 })();
