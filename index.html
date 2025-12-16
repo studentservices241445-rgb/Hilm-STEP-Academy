@@ -454,18 +454,70 @@
     <section id="contact-complaints" class="contact-section container">
       <h2>التواصل والشكاوى</h2>
       <p>
-        نسعد بتلقي استفساراتكم وملاحظاتكم واقتراحاتكم حول الدورة. نحن هنا
-        لطمأنة المشتركين ومعالجة أي شكاوى بأسرع وقت وبأسلوب سعودي محترم.
+        إذا كان لديك استفسار أو مشكلة أو اقتراح يخص الدورة، يرجى تعبئة
+        النموذج أدناه. يتم توليد رسالة جاهزة وإرسالها إلى المنسق عبر تيليجرام،
+        وستحصل على إشعار بأن رسالتك تم تلقيها وسيتم الرد عليك في أقرب وقت.
       </p>
-      <p>
-        للتواصل: يمكنكم مراسلتنا عبر البريد الإلكتروني
-        <a href="mailto:studentservices241445@gmail.com" target="_blank">studentservices241445@gmail.com</a>
-        أو عبر حساب المنسق على تيليجرام
-        <a href="https://t.me/Hilm_STEP1" target="_blank" rel="noopener">@Hilm_STEP1</a>.
-      </p>
-      <p>
-        نحرص على الرد على جميع الرسائل بلهجة سعودية ودية، ونقدر ثقتكم بنا.
-      </p>
+      <form id="complaintForm" class="complaint-form">
+        <div class="form-group">
+          <label for="complaintName">الاسم الكامل:</label>
+          <input
+            type="text"
+            id="complaintName"
+            name="complaintName"
+            placeholder="أدخل اسمك الكامل"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="complaintContactMethod">وسيلة التواصل المفضلة:</label>
+          <select
+            id="complaintContactMethod"
+            name="complaintContactMethod"
+            required
+          >
+            <option value="" disabled selected>-- اختر وسيلة التواصل --</option>
+            <option value="تلجرام">تلجرام</option>
+            <option value="واتساب">واتساب</option>
+            <option value="إيميل">إيميل</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="complaintContactLink"
+            >رابط حساب التواصل (اختياري):</label
+          >
+          <input
+            type="text"
+            id="complaintContactLink"
+            name="complaintContactLink"
+            placeholder="مثال: @Username أو +966123456789 أو name@example.com"
+          />
+        </div>
+        <div class="form-group">
+          <label for="complaintType">نوع الرسالة:</label>
+          <select id="complaintType" name="complaintType" required>
+            <option value="" disabled selected>-- اختر النوع --</option>
+            <option value="استفسار">استفسار</option>
+            <option value="اقتراح">اقتراح</option>
+            <option value="شكوى">شكوى</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="complaintMessage">نص الرسالة:</label>
+          <textarea
+            id="complaintMessage"
+            name="complaintMessage"
+            rows="3"
+            placeholder="اكتب رسالتك بالتفصيل"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group button-group">
+          <button type="button" id="sendComplaintBtn">إرسال الرسالة</button>
+          <button type="button" id="copyComplaintBtn">نسخ الرسالة</button>
+        </div>
+      </form>
     </section>
 
     <!-- قسم الروابط المفيدة -->
