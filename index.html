@@ -12,6 +12,9 @@
     <!-- ملف التنسيق الرئيسي -->
     <!-- مسار CSS في جذر المستودع -->
     <link rel="stylesheet" href="styles.css" />
+    <!-- إعدادات PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#012b28" />
   </head>
   <body>
     <!-- رأس الصفحة والتنقل -->
@@ -564,5 +567,17 @@
     <!-- تحميل ملفات التكوين والوظائف -->
     <script src="app-config.js"></script>
     <script src="app.js"></script>
+    <!-- تسجيل Service Worker للتطبيق التقدمي -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker
+            .register('service-worker.js')
+            .catch(function (err) {
+              console.warn('ServiceWorker registration failed:', err);
+            });
+        });
+      }
+    </script>
   </body>
 </html>
