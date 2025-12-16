@@ -497,6 +497,58 @@ body::after {
   border-radius: 12px;
 }
 
+/* ----- نموذج التواصل والشكاوى ----- */
+.complaint-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: right;
+}
+.complaint-form .form-group {
+  margin-bottom: 1rem;
+}
+.complaint-form label {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+.complaint-form input[type="text"],
+.complaint-form select,
+.complaint-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: right;
+}
+.complaint-form textarea {
+  resize: vertical;
+}
+.complaint-form .button-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.complaint-form .button-group button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: var(--brand-1);
+}
+.complaint-form .button-group #copyComplaintBtn {
+  background-color: #6c757d;
+}
+.complaint-form .button-group button:hover {
+  opacity: 0.9;
+}
+
 /* قسم إنجازات الطلاب وعدد المشتركين */
 .achievements-section {
   margin-top: 3rem;
