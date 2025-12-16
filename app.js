@@ -173,10 +173,20 @@
       const reason = document.getElementById("reason").value;
       const level = document.getElementById("level").value;
       const notes = document.getElementById("notes").value.trim();
-      let message = "";
+      // أسماء الملفات المرفقة من خانة المصادر
+      const resourcesInput = document.getElementById("resourcesUpload");
+      let resourcesFiles = "";
+      if (resourcesInput && resourcesInput.files && resourcesInput.files.length > 0) {
+        resourcesFiles = Array.from(resourcesInput.files)
+          .map((f) => f.name)
+          .join(", ");
+      }
+      let message = "اشتراك STEP\n";
       message += `الاسم الكامل: ${name}\n`;
       message += `وسيلة التواصل المفضلة: ${method}\n`;
-      message += `رابط حساب التواصل: ${contact}\n`;
+      if (contact !== "") {
+        message += `رابط حساب التواصل: ${contact}\n`;
+      }
       message += `موعد الاختبار: ${testDate}\n`;
       if (currentScore !== "") {
         message += `الدرجة الحالية: ${currentScore}\n`;
@@ -187,6 +197,10 @@
       if (notes !== "") {
         message += `ملاحظات إضافية: ${notes}\n`;
       }
+      if (resourcesFiles !== "") {
+        message += `مصادر مرفقة: ${resourcesFiles}\n`;
+      }
+      message += "يرجى تحويل المبلغ إلى الحساب الموضح أعلاه ثم إرسال الإيصال.\n";
       message += "تم الإرسال من الموقع الرسمي.";
       return message;
     }
@@ -220,21 +234,64 @@
     initSubscriberCounter();
     initNotifications();
     initReceiptUpload();
+    initResourcesUpload();
+    initNavigation();
   });
 
   /**
    * ملء قائمة الإنجازات بعينات تمثيلية.
    */
   function initAchievements() {
+    // قائمة الإنجازات مع اقتباسات لعرضها في نافذة منبثقة
     const achievements = [
-      { name: "عبدالرحمن", region: "الرياض", score: 95 },
-      { name: "فاطمة", region: "جدة", score: 92 },
-      { name: "يوسف", region: "الدمام", score: 88 },
-      { name: "سارة", region: "المدينة", score: 90 },
-      { name: "أحمد", region: "القصيم", score: 85 },
-      { name: "ريم", region: "أبها", score: 93 },
-      { name: "محمد", region: "تبوك", score: 87 },
-      { name: "نورة", region: "حائل", score: 91 }
+      {
+        name: "عبدالرحمن",
+        region: "الرياض",
+        score: 95,
+        quote: "هذه الدورة كانت سر نجاحي، ارتفعت درجتي 25 نقطة."
+      },
+      {
+        name: "فاطمة",
+        region: "جدة",
+        score: 92,
+        quote: "الشرح واضح والخطط ساعدتني على تنظيم وقتي."
+      },
+      {
+        name: "يوسف",
+        region: "الدمام",
+        score: 88,
+        quote: "حققت حلمي بالحصول على درجة عالية."
+      },
+      {
+        name: "سارة",
+        region: "المدينة",
+        score: 90,
+        quote: "أجمل ما في الدورة أنها مختصرة ومباشرة."
+      },
+      {
+        name: "أحمد",
+        region: "القصيم",
+        score: 85,
+        quote: "الملخصات وفرت علي الكثير من الوقت."
+      },
+      {
+        name: "ريم",
+        region: "أبها",
+        score: 93,
+        quote: "المدرسون ساعدوني في فهم نقاط ضعفي."
+      },
+      {
+        name: "محمد",
+        region: "تبوك",
+        score: 87,
+        quote: "نظام الإشعارات والتحفيز كان رائعاً."
+      },
+      {
+        name: "نورة",
+        region: "حائل",
+        score: 91,
+        quote: "أنصح بها كل طالب يريد تجاوز STEP بسهولة."
+      }
     ];
     const container = document.getElementById("achievementsGrid");
     if (!container) return;
@@ -246,8 +303,47 @@
         <span class="student-region">${item.region}</span>
         <span class="student-score">${item.score}</span>
       `;
+      // عند النقر على العنصر، عرض نافذة منبثقة بالتفاصيل
+      div.addEventListener("click", () => {
+        showAchievementModal(item);
+      });
       container.appendChild(div);
     });
+  }
+
+  /**
+   * إنشاء أو إعادة استخدام نافذة منبثقة لعرض تفاصيل الطالب.
+   * @param {{name:string, region:string, score:number, quote:string}} data
+   */
+  function showAchievementModal(data) {
+    let modal = document.querySelector(".achievement-modal");
+    if (!modal) {
+      modal = document.createElement("div");
+      modal.className = "achievement-modal";
+      modal.innerHTML = `
+        <div class="modal-content">
+          <button class="close-btn" aria-label="إغلاق">×</button>
+          <h3></h3>
+          <p></p>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      // إغلاق عند النقر على الزر أو خارج المحتوى
+      modal.querySelector(".close-btn").addEventListener("click", () => {
+        modal.classList.remove("active");
+      });
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
+    }
+    // تحديث محتوى النافذة
+    const h3 = modal.querySelector("h3");
+    const p = modal.querySelector("p");
+    h3.textContent = `${data.name} – ${data.region} | درجة ${data.score}`;
+    p.textContent = data.quote;
+    modal.classList.add("active");
   }
 
   /**
@@ -358,5 +454,32 @@
         showToast(`تم اختيار: ${names}. يرجى إرفاق الإيصال في تيليجرام عند الإرسال.`);
       }
     });
+  }
+
+  /**
+   * تهيئة رفع مصادر إضافية وإشعار المستخدم بعد اختيار ملفات.
+   */
+  function initResourcesUpload() {
+    const input = document.getElementById("resourcesUpload");
+    if (!input) return;
+    input.addEventListener("change", function () {
+      if (input.files && input.files.length > 0) {
+        const names = Array.from(input.files).map((f) => f.name).join(", ");
+        showToast(`تم اختيار المصادر: ${names}. سيتم ذكرها في الرسالة.`);
+      }
+    });
+  }
+
+  /**
+   * تهيئة زر القائمة للتنقل في الشاشات الصغيرة.
+   */
+  function initNavigation() {
+    const toggle = document.getElementById("menuToggle");
+    const navList = document.getElementById("navList") || document.querySelector(".nav-list");
+    if (toggle && navList) {
+      toggle.addEventListener("click", () => {
+        navList.classList.toggle("open");
+      });
+    }
   }
 })();
