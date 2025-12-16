@@ -400,6 +400,146 @@ h2 {
   border-radius: 12px;
 }
 
+/* قسم إنجازات الطلاب وعدد المشتركين */
+.achievements-section {
+  margin-top: 3rem;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.achievement-item {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.achievement-item .student-name {
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.achievement-item .student-region {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.2rem;
+}
+
+.achievement-item .student-score {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--brand-1);
+}
+
+/* عدّاد المشتركين */
+.subscriber-counter {
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.subscriber-counter .count {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.subscriber-counter .label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* حاوية الإشعارات المنبثقة */
+.notifications-container {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.notification-item {
+  background-color: rgba(1, 43, 40, 0.9);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  color: var(--text);
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.5s ease forwards;
+}
+
+/* تأثير اختفاء الإشعارات */
+.notification-item.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* إرفاق الإيصال */
+.receipt-upload {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.receipt-upload label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.receipt-upload input[type="file"] {
+  width: 100%;
+  padding: 0.4rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.receipt-upload input[type="file"]::file-selector-button {
+  background-color: var(--brand-1);
+  color: var(--bg-start);
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.receipt-upload input[type="file"]::file-selector-button:hover {
+  background-color: var(--brand-2);
+}
+
 /* تذييل الموقع */
 .site-footer {
   text-align: center;

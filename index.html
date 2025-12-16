@@ -10,7 +10,8 @@
       rel="stylesheet"
     />
     <!-- ملف التنسيق الرئيسي -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- مسار CSS في جذر المستودع -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <!-- رأس الصفحة والتنقل -->
@@ -174,6 +175,22 @@
                 اختبارك إلى منسق الدورة عبر تيليجرام.
               </li>
             </ol>
+
+            <!-- حقل لإرفاق الإيصال (اختياري) -->
+            <div class="receipt-upload">
+              <label for="receiptUpload">أرفق الإيصال (اختياري):</label>
+              <input
+                type="file"
+                id="receiptUpload"
+                name="receiptUpload"
+                accept="image/*,application/pdf"
+                multiple
+              />
+              <small class="note"
+                >بعد اختيار الملف سيتم فتح تيليجرام، قم بإرفاق الإيصال يدوياً
+                مع الرسالة.</small
+              >
+            </div>
             <div class="cta-row">
               <a
                 id="tgOpen"
@@ -334,6 +351,26 @@
       </p>
     </section>
 
+    <!-- قسم إنجازات الطلاب وعدد المشتركين -->
+    <section id="achievements" class="achievements-section container">
+      <h2>نتائج الطلاب وإنجازاتهم</h2>
+      <p>
+        نستعرض هنا بعض إنجازات طلابنا المتفوقين في الدورة لمشاركة نجاحاتهم
+        وتحفيز غيرهم على تحقيق أفضل النتائج. البيانات المعروضة أمثلة
+        تمثيلية وتعطي فكرة عن مستوى الطلاب في المناطق المختلفة.
+      </p>
+      <div class="achievements-grid" id="achievementsGrid">
+        <!-- سيتم ملء الإنجازات بواسطة JavaScript -->
+      </div>
+      <div class="subscriber-counter" id="subscriberCounter">
+        <span class="count" id="subscriberCount">0</span>
+        <span class="label">مشترك مسجل حتى الآن</span>
+      </div>
+    </section>
+
+    <!-- حاوية الإشعارات المنبثقة -->
+    <div id="notificationsContainer" class="notifications-container" aria-live="polite"></div>
+
     <!-- التذييل -->
     <footer class="site-footer container">
       <p>
@@ -343,7 +380,7 @@
     </footer>
 
     <!-- تحميل ملفات التكوين والوظائف -->
-    <script src="assets/js/app-config.js"></script>
-    <script src="assets/js/app.js"></script>
+    <script src="app-config.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
