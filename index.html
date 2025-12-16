@@ -1,384 +1,349 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>أكاديمية عايد × مبادرة حُلم — دورة STEP الشاملة | عرض اليوم الوطني</title>
-<meta name="description" content="دورة STEP الشاملة — شرح متكامل، تجميعات مكررة محلولة، خطط مرنة، تحديثات مجانية مدى الحياة، عرض اليوم الوطني 100 بدل 400." />
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --green:#0ea56b; --green-2:#0c8d5b; --green-3:#072e24;
-    --white:#ffffff; --gold:#facc15; --ink:#0b1324; --muted:#cbd5e1;
-    --stroke:#134a3a; --glass:rgba(8,53,36,.45); --glass2:rgba(6,63,45,.55);
-    --glow:0 14px 36px rgba(14,165,107,.28);
-    --danger:#ef4444; --ok:#22c55e;
-  }
-  *{box-sizing:border-box} html,body{height:100%}
-  body{
-    margin:0;font-family:"Tajawal",system-ui,Segoe UI,Roboto,Arial;line-height:1.9;
-    color:var(--white);
-    background:
-      radial-gradient(1100px 700px at 100% -10%, rgba(14,165,107,.10), transparent 65%),
-      radial-gradient(900px 600px at -10% 110%, rgba(6,63,45,.55), transparent 60%),
-      linear-gradient(180deg, #072a20, var(--green-3) 55%, #061d16);
-    scroll-behavior:smooth;
-  }
-  a{color:#c7ffdb;text-decoration:none}
-  .wrap{max-width:1160px;margin:auto;padding:24px}
-  .topbar{
-    display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;
-    padding:10px 14px;background:var(--glass);border:1px solid var(--stroke);
-    border-radius:14px;margin:12px auto;color:#e2f6ec;font-weight:600;backdrop-filter:blur(6px)
-  }
-  .badge-hero{
-    display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg, var(--gold), #ffe58a);
-    color:#1f2b1f;padding:6px 12px;border-radius:999px;font-weight:800;font-size:13px;
-    box-shadow:0 6px 18px rgba(250,204,21,.35)
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دورة STEP الشاملة الحديثة | أكاديمية ستيب المميزة</title>
+    <!-- تحميل خط Tajawal من Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- ملف التنسيق الرئيسي -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- رأس الصفحة والتنقل -->
+    <header class="site-header">
+      <div class="container nav-container">
+        <a href="#hero" class="brand">STEP الشاملة الحديثة</a>
+        <nav>
+          <ul class="nav-list">
+            <li><a href="#about">عن الدورة</a></li>
+            <li><a href="#content">محتوى الدورة</a></li>
+            <li><a href="#payment">السعر والاشتراك</a></li>
+            <li><a href="#register">التسجيل</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  header.hero{
-    margin-top:14px;border:1px solid var(--stroke);border-radius:18px;padding:22px 22px 14px;position:relative;overflow:hidden;
-    background:linear-gradient(135deg, var(--glass2), rgba(6,63,45,.35));isolation:isolate;
-  }
-  .ribbon{position:absolute;top:16px;left:16px;background:linear-gradient(90deg,#0ce185,#22c55e);
-    color:#06231b;font-weight:800;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.25);
-    box-shadow:0 10px 22px rgba(7,197,120,.35);z-index:2}
-  .hero-head{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-  .logo{width:86px;height:86px;border-radius:16px;overflow:hidden;flex:0 0 auto;
-    box-shadow:var(--glow);border:1px solid var(--stroke);background:#083524;
-    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:#d1fae5;letter-spacing:.5px}
-  h1{margin:0 0 6px 0;font-size:30px}
-  .sub{color:#d9f7ec}
-  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-  .btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:800;
-       padding:12px 18px;border-radius:12px;border:1px solid transparent;transition:.2s ease; cursor:pointer}
-  .btn-main{background:linear-gradient(180deg, var(--green), var(--green-2));color:#06231b;box-shadow:var(--glow)}
-  .btn-main:hover{filter:brightness(1.05) saturate(1.05) translateY(-1px)}
-  .btn-ghost{color:#e7fff5;border-color:var(--stroke);background:rgba(4,25,19,.35)}
-  .btn-ghost:hover{background:rgba(4,25,19,.5)}
-  .wave{height:8px;border-radius:999px;background:linear-gradient(90deg,#0ce185,#22c55e,#06c270);
-    filter:saturate(1.2);box-shadow:0 8px 26px rgba(34,197,94,.35) inset;margin-top:14px}
-
-  .section{margin-top:28px}
-  h2{margin:0 0 10px 0;font-size:22px;color:#e7fff5}
-  .card{background:linear-gradient(180deg, rgba(8,53,36,.65), rgba(8,53,36,.35));
-    border:1px solid var(--stroke);border-radius:16px;padding:18px;box-shadow:0 1px 0 rgba(255,255,255,.04) inset}
-  .grid{display:grid;gap:16px}
-  @media(min-width:900px){.grid-2{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:1fr 1fr 1fr}}
-  ul{padding-right:18px;margin:0} li{margin:6px 0}
-  .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(56,189,248,.15);color:#c7f9ff;border:1px solid rgba(56,189,248,.25);font-weight:700}
-  .price{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:18px}
-  .price s{color:#a7b8ad} .price .now{color:#22f7a0;font-weight:900;font-size:20px}
-  .reason{color:#eafcf5}
-  .faq h3{margin:0 0 6px 0;font-size:18px;color:#e7fff5}
-  .faq p{margin:0 0 14px 0;color:#d7efe6}
-
-  label{display:block;margin-bottom:6px;color:#e7fff5;font-weight:700}
-  .row{display:grid;gap:12px}
-  @media(min-width:720px){ .row-2{grid-template-columns:1fr 1fr} .row-3{grid-template-columns:1fr 1fr 1fr} }
-
-  input,select,textarea{
-    width:100%;padding:12px 12px;border-radius:12px;border:1px solid var(--stroke);
-    background:rgba(4,25,19,.45);color:#f6fff9;outline:none
-  }
-  textarea{resize:vertical}
-  .hint{color:#bfe9d8;font-size:13px;margin-top:8px}
-
-  .badges{display:flex;flex-wrap:wrap;gap:10px}
-  .badge{border:1px solid var(--stroke);background:rgba(7,43,33,.45);padding:10px 12px;border-radius:12px;font-weight:800}
-
-  .quote{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.2);border-radius:14px;padding:14px}
-  .steps{counter-reset:st}
-  .step{position:relative;padding:14px;border:1px solid var(--stroke);border-radius:12px;background:rgba(7,43,33,.5);margin-bottom:10px}
-  .step:before{counter-increment:st;content:counter(st);position:absolute;inset:-12px auto auto -12px;background:#ffe58a;color:#052216;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:999px;font-weight:900;border:2px solid #fff}
-
-  footer{text-align:center;color:#cbeee0;margin:34px 0 90px}
-
-  .sticky-cta{
-    position:fixed;inset:auto 0 0 0;padding:10px;background:rgba(6,63,45,.88);backdrop-filter:blur(8px);
-    border-top:1px solid var(--stroke);display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;z-index:50
-  }
-  .sticky-cta .tag{background:linear-gradient(90deg, var(--gold),#ffe58a);color:#11301f;font-weight:900;border-radius:999px;padding:4px 10px}
-  .topbtn{position:fixed;inset:auto 16px 86px auto;background:var(--green);color:#05311f;border:none;border-radius:999px;padding:10px 12px;font-weight:900;cursor:pointer;box-shadow:var(--glow);z-index:51}
-
-  .fade{opacity:0;transform:translateY(6px);transition:.5s ease}
-  .fade.show{opacity:1;transform:none}
-
-  /* رسائل النموذج */
-  .msg{display:none;margin-top:10px;padding:10px;border-radius:10px;font-weight:700}
-  .msg.err{display:block;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.45);color:#fecaca}
-  .msg.ok{display:block;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.45);color:#bbf7d0}
-</style>
-</head>
-<body>
-
-<div class="wrap">
-
-  <div class="topbar fade">
-    <span class="badge-hero">🇸🇦 عرض اليوم الوطني</span>
-    <span>خصم خاص — <strong>100 ريال بدل 400</strong> — اشتراك مدى الحياة + تحديثات مجانية</span>
-  </div>
-
-  <header class="hero fade" id="top">
-    <span class="ribbon">ينتهي 24</span>
-    <div class="hero-head">
-      <div class="logo" title="A">عايد</div>
-      <div>
-        <h1>أكاديمية عايد × مبادرة حُلم — دورة STEP الشاملة</h1>
-        <div class="sub">محتوى مرتب باللهجة السعودية: شرح، تجميعات، كويزات، وخطط للمبتدئ والمستعجل — لين توصل +90 بإذن الله 🎯</div>
-        <div class="cta-row">
-          <a class="btn btn-main" href="#register">🎫 اشترك الآن عبر النموذج</a>
-          <a class="btn btn-ghost" href="https://t.me/stepp2024" target="_blank">📢 قناة التحديثات</a>
-          <a class="btn btn-ghost" href="https://t.me/ayedacadmeybot" target="_blank">📂 بوت المحتوى المجاني</a>
-        </div>
-        <div class="countdown" id="countdown" style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-          <div class="cd-item" style="min-width:74px;text-align:center;border:1px solid var(--stroke);border-radius:10px;padding:8px;background:rgba(7,43,33,.45)"><b id="dd">00</b>أيام</div>
-          <div class="cd-item" style="min-width:74px;text-align:center;border:1px solid var(--stroke);border-radius:10px;padding:8px;background:rgba(7,43,33,.45)"><b id="hh">00</b>ساعات</div>
-          <div class="cd-item" style="min-width:74px;text-align:center;border:1px solid var(--stroke);border-radius:10px;padding:8px;background:rgba(7,43,33,.45)"><b id="mm">00</b>دقائق</div>
-          <div class="cd-item" style="min-width:74px;text-align:center;border:1px solid var(--stroke);border-radius:10px;padding:8px;background:rgba(7,43,33,.45)"><b id="ss">00</b>ثواني</div>
-          <span class="pill">الخصم ينتهي بتاريخ 24</span>
+    <!-- قسم البطل -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-content">
+        <h1>دورة STEP الشاملة الحديثة</h1>
+        <p class="subtitle">
+          اختصرنا لك طريق خمس سنوات من التجميعات وتجارب المختبرين في خطة واحدة
+          واضحة.
+        </p>
+        <ul class="features-list">
+          <li>محتوى منظّم حسب أقسام الاختبار</li>
+          <li>ملخصات PDF ونماذج محلولة</li>
+          <li>تحديثات مستمرة وفق تجارب المختبرين</li>
+          <li>وصول مدى الحياة للمحتوى</li>
+        </ul>
+        <div class="hero-buttons">
+          <a href="#content" class="btn primary">📘 التفاصيل الكاملة</a>
+          <a href="#register" class="btn secondary">📝 سجّل اهتمامك الآن</a>
         </div>
       </div>
-    </div>
-    <div class="wave"></div>
-  </header>
+      <!-- خلفية متحركة عبر CSS -->
+      <div class="hero-bg"></div>
+    </section>
 
-  <!-- ما هو STEP -->
-  <section class="section fade" id="about">
-    <h2>ما هو اختبار STEP؟</h2>
-    <div class="card">
-      اختبار كفايات اللغة الإنجليزية (STEP) يقيس <strong>الاستماع، القراءة، القواعد والتراكيب، والكتابة التحليلية</strong>.
-      الدرجة من 100: <span class="pill">+70 جيد جدًا</span> — <span class="pill">+90 ممتاز</span>.
-      مع دورتنا بنمشيك على <strong>النمط</strong> ونمرّنك على <strong>المكرر</strong> بخطط عملية تناسب وقتك.
-    </div>
-  </section>
-
-  <!-- محتوى الدورة + السعر -->
-  <section class="section grid grid-2 fade">
-    <div class="card">
-      <h2>محتوى الدورة</h2>
-      <ul>
-        <li>شروحات فيديو واضحة لكل الأقسام (Grammar – Reading – Listening – Structure).</li>
-        <li>ملفات PDF للطباعة + ملخصات مختصرة “بكج الطوارئ”.</li>
-        <li>تجميعات حديثة مكررة مع الحلول — أي جديد نضيفه مباشرة.</li>
-        <li>كويزات تدريبية تحاكي الاختبار.</li>
-        <li>خطط مذاكرة مرنة (مكثفة/متدرجة) للمبتدئ والمستعجل.</li>
-        <li>اشتراك <strong>مدى الحياة</strong> + تحديثات مجانية — بدون رسوم لاحقة.</li>
-      </ul>
-      <div class="badges" style="margin-top:8px">
-        <div class="badge">مدى الحياة</div>
-        <div class="badge">تحديثات مجانية</div>
-        <div class="badge">دعم سريع</div>
-        <div class="badge">محتوى مجرّب</div>
-      </div>
-    </div>
-    <div class="card">
-      <h2>السعر والخصم — 🇸🇦 اليوم الوطني</h2>
-      <div class="price">
-        <s>400 ريال</s>
-        <span class="now">100 ريال فقط</span>
-        <span class="pill">لفترة محدودة</span>
-      </div>
-      <p class="reason">
-        <strong>ليش السعر مختلف عن الموقع؟</strong><br>
-        لأن التفعيل يتم عبر تيليجرام بإدارة مباشرة بدون بوابات دفع وعمولات، فنوفر عليك التكلفة مع الحفاظ على جودة الشرح والتحديثات. الهدف: تبدأ بسهولة وبدون عوائق.
+    <!-- قسم عن الشاملة الحديثة -->
+    <section id="about" class="about-section container">
+      <h2>لماذا الدورة الشاملة الحديثة؟</h2>
+      <p>
+        هذه الدورة تجمع خلاصة أقوى الدورات المعروفة بدون ادعاء تمثيلها،
+        وتعتمد على دراسة تسريبات مركز قياس لآخر خمس سنوات وأنماط الأسئلة
+        المتكررة وأخطاء الطلاب الشائعة.
       </p>
-      <div class="hint">* الأولوية بالرد للطلاب اللي يرسلون “اشتراك STEP” وجادّين بالتسجيل.</div>
-    </div>
-  </section>
+      <p class="note">
+        قد تجد تواريخ مختلفة على بعض الملفات؛ هذه مجرد أسماء إصدارات وقت
+        النشر ولا تعني أن المحتوى قديم. نمط أسئلة STEP يتكرر باستمرار، لذلك
+        نركز على فهم طريقة الحل وليس تاريخ الملف.
+      </p>
+    </section>
 
-  <!-- خطة 48 ساعة -->
-  <section class="section fade">
-    <h2>خطة أول 48 ساعة (تدفئة سريعة)</h2>
-    <div class="card grid grid-2">
-      <div>
-        <div class="step"><b>اليوم 1 — صباحًا:</b> نظرة على هيكل الاختبار + تقييم تمهيدي.</div>
-        <div class="step"><b>اليوم 1 — مساءً:</b> قواعد أساسية مركّزة + كويز + ملخصات PDF.</div>
+    <!-- قسم المحتوى -->
+    <section id="content" class="content-section container">
+      <h2>محتوى الدورة</h2>
+      <div class="content-grid">
+        <div class="content-card">
+          <h3>القواعد (Grammar)</h3>
+          <p>
+            شروحات مختصرة للقواعد الأكثر تكراراً مع تمارين مستخلصة من ملفات
+            عايد والحسّاني وغيرها بعد تنقيحها.
+          </p>
+        </div>
+        <div class="content-card">
+          <h3>القراءة (Reading)</h3>
+          <p>
+            استراتيجيات القراءة السريعة وأهم القطع المتكررة مثل Volcano وStress
+            وغيرها، مع تجميعات وحلول مشروحة.
+          </p>
+        </div>
+        <div class="content-card">
+          <h3>الاستماع (Listening)</h3>
+          <p>
+            خطوات الاستماع الفعّال وتمارين صوتية متدرجة ونصائح حول الأسئلة
+            الشائعة مثل main idea وimportant point والتواريخ.
+          </p>
+        </div>
+        <div class="content-card">
+          <h3>النماذج المكررة</h3>
+          <p>
+            جميع النماذج الموثوقة من مختلف المدربين مع الشروحات، بالإضافة إلى
+            ملف “المختصر الذهبي” للمراجعة قبل الاختبار.
+          </p>
+        </div>
+        <div class="content-card">
+          <h3>خطط المذاكرة</h3>
+          <p>
+            خطط جاهزة لمدة 3 أيام أو أسبوع أو شهر، وكذلك خطة للانتقال من درجة
+            35–50 إلى 75+.
+          </p>
+        </div>
       </div>
-      <div>
-        <div class="step"><b>اليوم 2 — صباحًا:</b> قراءة (قطع متكررة) + أسئلة على الفكرة الرئيسية والمفردات.</div>
-        <div class="step"><b>اليوم 2 — مساءً:</b> استماع (حوارات قصيرة) + أخطاء شائعة وكيف تتفاداها.</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- شهادات -->
-  <section class="section fade">
-    <h2>تجارب طلاب</h2>
-    <div class="card grid grid-3">
-      <div class="quote">“كنت ضايع بين مصادر كثيرة. هنا فهمت النمط ومشيت على الخطة ورفعت درجتي لـ <b>84</b>.” — خالد</div>
-      <div class="quote">“الملخصات + التجميعات المحلولة أنقذتني قبل الاختبار، جبت <b>+90</b> ولله الحمد.” — نورة</div>
-      <div class="quote">“اشتراك مدى الحياة فعليًا فادني، اختبرت بعد 4 شهور وكل التحديثات كانت جاهزة.” — فهد</div>
-    </div>
-  </section>
-
-  <!-- روابط -->
-  <section class="section fade">
-    <h2>روابط مهمة</h2>
-    <div class="card">
-      <div class="cta-row">
-        <a class="btn btn-ghost" href="https://t.me/stepp2024" target="_blank">📢 قناة المشتركين والتحديثات</a>
-        <a class="btn btn-ghost" href="https://t.me/ayedacadmeybot" target="_blank">📂 بوت المحتوى المجاني</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- الأسئلة الشائعة -->
-  <section class="section fade">
-    <h2>الأسئلة الشائعة</h2>
-    <div class="card faq">
-      <h3>هل الاشتراك محدد المدة؟</h3>
-      <p>لا. الاشتراك مدى الحياة، وكل التحديثات توصلك مجانًا.</p>
-
-      <h3>لو ما حجزت اختباري إلا بعد أشهر؟</h3>
-      <p>عادي، اشترك الآن وجهّز براحتك. المحتوى ثابت معك، وأي تحديث جديد يوصلك تلقائيًا.</p>
-
-      <h3>أقدر أشوف مثال من المحتوى؟</h3>
-      <p>إيه، جرّب <a href="https://t.me/ayedacadmeybot" target="_blank" style="color:#b7ffcf">بوت المحتوى المجاني</a> وشوف بنفسك.</p>
-
-      <h3>لو واجهت روابط يوتيوب “خاص”؟</h3>
-      <p>نوفر نفس المحتوى داخل الدرايف/القناة لضمان الوصول دائمًا.</p>
-
-      <h3>هل فيه استرجاع؟</h3>
-      <p>الوصول للمحتوى مباشر بعد الدفع، لذلك الاسترجاع غير متاح. نضمن الجودة والدعم.</p>
-    </div>
-  </section>
-
-  <!-- طريقة الاشتراك -->
-  <section class="section fade" id="how">
-    <h2>طريقة الاشتراك (باختصار)</h2>
-    <div class="card steps">
-      <div class="step"><b>عَبّ النموذج</b> بالأسفل — يفتح لك تيليجرام برسالة جاهزة تبدأ بـ “اشتراك STEP”.</div>
-      <div class="step"><b>استلم بيانات التحويل</b> ردًا على رسالتك في تيليجرام.</div>
-      <div class="step"><b>حوِّل 100 ريال</b> (عرض اليوم الوطني) ثم أرسل الإيصال + اسمك + موعد الاختبار.</div>
-      <div class="step"><b>يتم التفعيل سريعًا</b> وتوصلك روابط القنوات/الدرايف وتبدأ مذاكرتك.</div>
-    </div>
-  </section>
-
-  <!-- نموذج التسجيل -->
-  <section class="section fade" id="register">
-    <h2>نموذج التسجيل السريع</h2>
-    <div class="card">
-      <form onsubmit="return sendToTelegram()" id="form" novalidate>
-        <div class="row row-2">
-          <div>
-            <label for="name">الاسم الكامل</label>
-            <input id="name" required placeholder="مثال: نواف العتيبي" />
+    <!-- قسم السعر وطريقة الدفع -->
+    <section id="payment" class="pay-section">
+      <div class="container">
+        <h2>السعر وطريقة الاشتراك</h2>
+        <!-- سيتم ملء البيانات بواسطة app-config.js -->
+        <div class="pay-card">
+          <div class="price-row">
+            <div class="price">
+              <span id="salePrice" class="sale"></span>
+              <span id="originalPrice" class="original"></span>
+              <span id="discountPct" class="discount"></span>
+            </div>
+            <small class="note"
+              >الأسعار شاملة الضريبة. <strong id="labelNote"></strong></small
+            >
           </div>
-          <div>
-            <label for="exam">موعد الاختبار</label>
-            <select id="exam" required>
-              <option value="">اختر الموعد</option>
-              <option>ما حجزت بعد</option>
-              <option>هذا الشهر</option>
-              <option>الشهر القادم</option>
-              <option>بعد ٣ أشهر+</option>
-            </select>
+          <div class="bank-grid">
+            <div>
+              <dt>البنك</dt>
+              <dd id="bankName"></dd>
+            </div>
+            <div>
+              <dt>اسم المستفيد</dt>
+              <dd id="beneficiary"></dd>
+            </div>
+            <div>
+              <dt>رقم الحساب</dt>
+              <dd>
+                <span id="accountNumber" class="mono" dir="ltr"></span>
+                <button
+                  class="copy-btn"
+                  data-copy-target="#accountNumber"
+                  aria-label="نسخ رقم الحساب"
+                >
+                  نسخ
+                </button>
+              </dd>
+            </div>
+            <div>
+              <dt>رقم الآيبان</dt>
+              <dd>
+                <span id="iban" class="mono" dir="ltr"></span>
+                <button
+                  class="copy-btn"
+                  data-copy-target="#iban"
+                  aria-label="نسخ الآيبان"
+                >
+                  نسخ
+                </button>
+                <small id="ibanValidity" class="iban-status" aria-live="polite"
+                ></small>
+              </dd>
+            </div>
+          </div>
+          <div class="confirm-steps">
+            <h3>طريقة التأكيد</h3>
+            <ol>
+              <li>
+                قم بتحويل المبلغ الموضّح إلى البيانات أعلاه من خلال أي وسيلة
+                تحويل مناسبة.
+              </li>
+              <li>
+                أرسل <strong>صورة الإيصال أو ملف PDF</strong> مع ذكر اسمك وموعد
+                اختبارك إلى منسق الدورة عبر تيليجرام.
+              </li>
+            </ol>
+            <div class="cta-row">
+              <a
+                id="tgOpen"
+                class="btn primary"
+                target="_blank"
+                rel="noopener"
+              >
+                إرسال الإيصال عبر تيليجرام
+              </a>
+              <button id="copyAll" class="btn secondary">
+                نسخ كل البيانات
+              </button>
+            </div>
+            <p class="warn">أي تحويل خارج هذه البيانات غير معتمد.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="row">
-          <div>
-            <label for="notes">ملاحظات/احتياجات (اختياري)</label>
-            <textarea id="notes" rows="3" placeholder="اكتب أي ملاحظة تساعدنا نخدمك أفضل (مثال: أحتاج خطة مكثفة)"></textarea>
-          </div>
+    <!-- قسم التسجيل -->
+    <section id="register" class="register-section container">
+      <h2>نموذج التسجيل</h2>
+      <p>
+        يرجى تعبئة النموذج التالي لإرسال طلب التسجيل. لا يتم تخزين أي بيانات؛
+        يتم توليد رسالة جاهزة وإرسالها عبر تيليجرام.
+      </p>
+      <form id="stepForm" class="step-form">
+        <div class="form-group">
+          <label for="fullName">الاسم الكامل:</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="أدخل اسمك الكامل"
+            required
+          />
         </div>
-
-        <div class="hint">
-          بعد فتح تيليجرام بالرسالة الجاهزة، اطلب “<strong>بيانات التحويل البنكي</strong>”. بعد التحويل أرسل <strong>الإيصال</strong> لتأكيد اشتراكك بسرعة واللحاق بالخصم <strong>(100 بدل 400)</strong>.
+        <div class="form-group">
+          <label for="contactMethod">وسيلة التواصل المفضلة:</label>
+          <select id="contactMethod" name="contactMethod" required>
+            <option value="" disabled selected>-- اختر وسيلة التواصل --</option>
+            <option value="تلجرام">تلجرام</option>
+            <option value="واتساب">واتساب</option>
+            <option value="إيميل">إيميل</option>
+          </select>
         </div>
-
-        <div id="formMsg" class="msg"></div>
-
-        <div class="cta-row" style="margin-top:12px">
-          <button type="submit" class="btn btn-main">🚀 متابعة في تيليجرام برسالة جاهزة</button>
+        <div class="form-group">
+          <label for="contactLink">رابط حساب التواصل:</label>
+          <input
+            type="text"
+            id="contactLink"
+            name="contactLink"
+            placeholder="مثال: @Username أو +966123456789 أو name@example.com"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="testDate">موعد الاختبار:</label>
+          <select id="testDate" name="testDate" required>
+            <option value="" disabled selected>-- اختر موعد الاختبار --</option>
+            <option value="هذا الشهر">هذا الشهر</option>
+            <option value="الشهر القادم">الشهر القادم</option>
+            <option value="بعد 3 أشهر">بعد 3 أشهر</option>
+            <option value="لم أحجز بعد">لم أحجز بعد</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="currentScore">الدرجة الحالية <span class="optional">(اختياري)</span>:</label>
+          <input
+            type="number"
+            id="currentScore"
+            name="currentScore"
+            placeholder="مثلاً: 75"
+            min="0"
+            max="100"
+          />
+        </div>
+        <div class="form-group">
+          <label for="targetScore">الدرجة المستهدفة:</label>
+          <select id="targetScore" name="targetScore" required>
+            <option value="" disabled selected>-- اختر الدرجة المستهدفة --</option>
+            <option value="+60">+60</option>
+            <option value="+70">+70</option>
+            <option value="+80">+80</option>
+            <option value="+90">+90</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="reason">سبب الرغبة في الاختبار:</label>
+          <select id="reason" name="reason" required>
+            <option value="" disabled selected>-- اختر السبب --</option>
+            <option value="توظيف">توظيف</option>
+            <option value="ابتعاث">ابتعاث</option>
+            <option value="جامعة">جامعة</option>
+            <option value="تحسين مستوى اللغة">تحسين مستوى اللغة</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="level">مستوى الطالب:</label>
+          <select id="level" name="level" required>
+            <option value="" disabled selected>-- حدد مستواك --</option>
+            <option value="مبتدئ">مبتدئ</option>
+            <option value="متوسط">متوسط</option>
+            <option value="متقدم">متقدم</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="notes">ملاحظات إضافية <span class="optional">(اختياري)</span>:</label>
+          <textarea
+            id="notes"
+            name="notes"
+            rows="3"
+            placeholder="اكتب أي معلومات إضافية هنا..."
+          ></textarea>
+        </div>
+        <div class="form-group button-group">
+          <button type="button" id="sendBtn" class="btn primary">
+            إرسال الطلب
+          </button>
+          <button type="button" id="copyBtn" class="btn secondary">
+            نسخ الطلب
+          </button>
         </div>
       </form>
-    </div>
-  </section>
+    </section>
 
-  <footer class="fade">
-    © 2025 أكاديمية عايد × مبادرة حُلم — جميع الحقوق محفوظة
-  </footer>
-</div>
+    <!-- قسم الآراء -->
+    <section id="reviews" class="reviews-section container">
+      <h2>آراء الطلاب</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <p>“الدورة مختصرة وواضحة، ساعدتني في رفع درجتي من 55 إلى 80.”</p>
+          <span class="reviewer">— عبدالله، طالب جامعي</span>
+        </div>
+        <div class="review-card">
+          <p>
+            “أعجبتني خطط المذاكرة المرنة، كانت مناسبة لظروف عملي واختباري.”
+          </p>
+          <span class="reviewer">— سارة، معلمة</span>
+        </div>
+        <div class="review-card">
+          <p>
+            “يستحق السعر الرمزي، محتوى واضح ودعم سريع من المنسقين.”
+          </p>
+          <span class="reviewer">— محمد، موظف</span>
+        </div>
+      </div>
+    </section>
 
-<!-- CTA سفلي ثابت -->
-<div class="sticky-cta">
-  <span class="tag">🇸🇦 عرض اليوم الوطني</span>
-  <span>100 ريال بدل 400 — مدى الحياة + تحديثات مجانية</span>
-  <a class="btn btn-main" href="#register">سجّل عبر النموذج</a>
-</div>
-<button class="topbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="الرجوع للأعلى">▲</button>
+    <!-- قسم التنبيه القانوني -->
+    <section id="legal" class="legal-section container">
+      <h2>تنبيه قانوني وشرعي</h2>
+      <p>
+        هذه مبادرة طلابية تعليمية مستقلة، لا تمثل أي جهة رسمية أو مدرب.
+        المحتوى مبني على تجارب الطلاب وملخصات عامة مع احترام كامل للحقوق.
+        يمكنك الاشتراك مباشرة في الدورات الرسمية للمدربين عبر مواقعهم
+        المعتمدة إذا رغبت.
+      </p>
+    </section>
 
-<script>
-  // حركات الظهور
-  const faders = document.querySelectorAll('.fade');
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); }});
-  },{threshold:.12});
-  faders.forEach(el=>io.observe(el));
+    <!-- التذييل -->
+    <footer class="site-footer container">
+      <p>
+        © 2025 أكاديمية ستيب المميزة – دورة STEP الشاملة الحديثة. جميع الحقوق
+        محفوظة.
+      </p>
+    </footer>
 
-  // عدّاد ينتهي يوم 24 (غيّر السنة/الشهر لو لزم)
-  const DEADLINE = new Date("2025-09-24T23:59:59");
-  const dd=document.getElementById('dd'), hh=document.getElementById('hh'), mm=document.getElementById('mm'), ss=document.getElementById('ss');
-  function pad(n){return n<10?'0'+n:n}
-  function tick(){
-    if(!dd) return;
-    const now=new Date(), t=DEADLINE-now;
-    if(t<=0){dd.textContent=hh.textContent=mm.textContent=ss.textContent="00"; return;}
-    const d=Math.floor(t/86400000), h=Math.floor(t%86400000/3600000), m=Math.floor(t%3600000/60000), s=Math.floor(t%60000/1000);
-    dd.textContent=pad(d); hh.textContent=pad(h); mm.textContent=pad(m); ss.textContent=pad(s);
-  }
-  tick(); setInterval(tick,1000);
-
-  // إعداد رسالة تيليجرام الجاهزة (بدون إظهار حساب المنسق علنيًا)
-  const COORDINATOR = "Hilm_STEP1"; // غيّر اليوزر هنا فقط لو تغيّر
-  const form = document.getElementById('form');
-  const formMsg = document.getElementById('formMsg');
-
-  function validate(){
-    const name = document.getElementById('name').value.trim();
-    const exam = document.getElementById('exam').value.trim();
-    if(!name || !exam){
-      showMsg("رجاءً عبّ البيانات المطلوبة قبل المتابعة.", true);
-      return false;
-    }
-    showMsg("", false);
-    return true;
-  }
-
-  function showMsg(text, isErr){
-    if(!text){ formMsg.style.display="none"; return; }
-    formMsg.textContent = text;
-    formMsg.className = "msg " + (isErr ? "err":"ok");
-  }
-
-  function buildMessage(){
-    const name = (document.getElementById('name').value || '').trim();
-    const exam = (document.getElementById('exam').value || '').trim();
-    const notes = (document.getElementById('notes').value || '').trim();
-
-    return `اشتراك STEP
-السلام عليكم، أرغب بالانضمام لدورة STEP الشاملة (عرض اليوم الوطني) 🇸🇦
-الاسم: ${name}
-موعد الاختبار: ${exam}
-ملاحظات: ${notes || "لا يوجد"}
-
-فضلاً أرسل لي بيانات التحويل البنكي الآن لتأكيد اشتراكي بأسرع وقت واللحاق بالخصم (100 ريال بدل 400).
-سأرسل الإيصال مباشرة بعد التحويل ✅
-شكرًا لكم.`;
-  }
-
-  function sendToTelegram(){
-    if(!validate()) return false;
-    const msg = buildMessage();
-    const url = `https://t.me/${COORDINATOR}?text=${encodeURIComponent(msg)}`;
-    window.open(url, "_blank");
-    showMsg("تمام! فتحنا لك تيليجرام برسالة جاهزة. أطلب بيانات التحويل البنكي، وبعد التحويل أرسل الإيصال لتأكيد الاشتراك.", false);
-    return false;
-  }
-</script>
-</body>
+    <!-- تحميل ملفات التكوين والوظائف -->
+    <script src="assets/js/app-config.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>

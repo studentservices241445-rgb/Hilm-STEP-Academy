@@ -1,0 +1,415 @@
+/*
+  ملف CSS الرئيسي لموقع دورة STEP الشاملة الحديثة.
+  يتضمّن تعريف الألوان والخطوط وتنسيقات الأقسام والبطاقات.
+*/
+
+/* تعريف متغيرات الألوان */
+:root {
+  --bg-start: #012b28;
+  --bg-end: #025f4b;
+  --brand-1: #0ea56b;
+  --brand-2: #00b894;
+  --accent: #facc15;
+  --text: #f8fafc;
+  --muted: #e2e8f0;
+  --card-bg: rgba(7, 59, 52, 0.5);
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* إعداد الخطوط الأساسية */
+body {
+  margin: 0;
+  font-family: "Tajawal", sans-serif;
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* حاوية عامة للحد من العرض والمحاذاة */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* رأس الموقع والتنقل */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(1, 43, 40, 0.9);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-list a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: var(--accent);
+}
+
+/* قسم البطل */
+.hero-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+  animation: gradientShift 15s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.hero-content .subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.8rem;
+}
+
+.features-list li {
+  margin: 0.3rem 0;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.features-list li::before {
+  content: "✔";
+  color: var(--accent);
+  position: absolute;
+  right: 0;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* أزرار عامة */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn.primary {
+  background-color: var(--brand-1);
+  color: var(--bg-start);
+}
+
+.btn.primary:hover {
+  background-color: var(--brand-2);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  color: var(--text);
+  border-color: var(--brand-1);
+}
+
+.btn.secondary:hover {
+  background-color: var(--brand-1);
+  color: var(--bg-start);
+}
+
+/* الأقسام العامة */
+section {
+  padding: 3rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+/* قسم المحتوى */
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.content-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 12px;
+  min-height: 180px;
+}
+
+.content-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+/* قسم الدفع */
+.pay-section {
+  background-color: rgba(1, 43, 40, 0.7);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pay-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin-top: 1.5rem;
+}
+
+.price-row {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.price .sale {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-inline-end: 0.5rem;
+}
+
+.price .original {
+  text-decoration: line-through;
+  opacity: 0.7;
+  margin-inline-end: 0.5rem;
+}
+
+.price .discount {
+  background-color: var(--brand-1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-weight: 700;
+  color: var(--bg-start);
+}
+
+.bank-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.bank-grid dt {
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.bank-grid dd {
+  margin: 0;
+  word-break: break-all;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  letter-spacing: 0.5px;
+}
+
+.copy-btn {
+  margin-inline-start: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--border-color);
+  background-color: transparent;
+  color: var(--text);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.iban-status {
+  font-size: 0.8rem;
+  margin-inline-start: 0.5rem;
+}
+
+.iban-status.ok {
+  color: #c7f9cc;
+}
+
+.iban-status.bad {
+  color: #ffdddd;
+}
+
+.confirm-steps h3 {
+  margin-top: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.confirm-steps ol {
+  padding-right: 1.5rem;
+}
+
+.cta-row {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.warn {
+  margin-top: 0.8rem;
+  color: #ffe8a3;
+}
+
+/* نموذج التسجيل */
+.register-section form {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  border-radius: 16px;
+  margin-top: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  direction: rtl;
+  font-family: inherit;
+}
+
+.form-group .optional {
+  font-weight: normal;
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-start;
+}
+
+/* قسم الآراء */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.review-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 12px;
+  position: relative;
+  min-height: 140px;
+}
+
+.reviewer {
+  display: block;
+  margin-top: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+/* قسم التنبيه القانوني */
+.legal-section p {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+/* تذييل الموقع */
+.site-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+}
+
+@media (min-width: 720px) {
+  .bank-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
