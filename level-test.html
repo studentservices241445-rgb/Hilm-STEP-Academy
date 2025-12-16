@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اختبار تحديد المستوى | أكاديمية ستيب المميزة</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* استايل عام للصفحة – خلفية متدرجة وألوان متناسقة مع الموقع */
+      body {
+        margin: 0;
+        font-family: "Tajawal", sans-serif;
+        background: linear-gradient(135deg, #012b28, #025f4b);
+        color: #f8fafc;
+        line-height: 1.6;
+        min-height: 100vh;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2rem;
+      }
+      .test-container {
+        background: rgba(7, 59, 52, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 2rem;
+        width: 100%;
+        max-width: 800px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+      h1 {
+        margin-top: 0;
+        color: #facc15;
+        font-size: 2rem;
+        text-align: center;
+      }
+      p.intro {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+      .question {
+        background: rgba(1, 43, 40, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+      }
+      .question p {
+        margin: 0 0 0.6rem;
+        font-weight: 700;
+        color: #facc15;
+      }
+      .question label {
+        display: block;
+        margin-bottom: 0.4rem;
+        cursor: pointer;
+      }
+      .question input[type="radio"] {
+        margin-left: 0.5rem;
+        accent-color: #0ea56b;
+      }
+      .submit-btn {
+        display: block;
+        width: fit-content;
+        margin: 1.5rem auto;
+        padding: 0.6rem 1.2rem;
+        background-color: #0ea56b;
+        color: #012b28;
+        border: none;
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .submit-btn:hover {
+        background-color: #00b894;
+      }
+      .test-result {
+        display: none;
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+      .test-result.active {
+        display: block;
+      }
+      .test-result h2 {
+        color: #facc15;
+        margin-bottom: 0.5rem;
+      }
+      .test-result p {
+        margin: 0.4rem 0;
+      }
+      .result-actions {
+        margin-top: 1rem;
+      }
+      .result-actions a {
+        display: inline-block;
+        margin: 0.3rem 0.5rem;
+        padding: 0.6rem 1.2rem;
+        background-color: #0ea56b;
+        color: #012b28;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 700;
+        transition: background-color 0.3s ease;
+      }
+      .result-actions a:hover {
+        background-color: #00b894;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test-container">
+      <h1>اختبار تحديد المستوى</h1>
+      <p class="intro">
+        جاوب على الأسئلة التالية لمعرفة مستواك الحالي وتلقّي خطة مناسبة لرحلتك
+        في التحضير لاختبار STEP. لا يوجد وقت محدد للإجابة.
+      </p>
+      <form id="testForm">
+        <!-- الأسئلة -->
+        <div class="question">
+          <p>1. ما الكلمة الأقرب لمعنى "Innovative"؟</p>
+          <label><input type="radio" name="q1" value="a" required /> بديع</label>
+          <label><input type="radio" name="q1" value="b" /> بسيط</label>
+          <label><input type="radio" name="q1" value="c" /> مبتكر</label>
+          <label><input type="radio" name="q1" value="d" /> قديم</label>
+        </div>
+        <div class="question">
+          <p>2. أكمل الفراغ: She is interested __ science.</p>
+          <label><input type="radio" name="q2" value="a" required /> on</label>
+          <label><input type="radio" name="q2" value="b" /> about</label>
+          <label><input type="radio" name="q2" value="c" /> in</label>
+          <label><input type="radio" name="q2" value="d" /> of</label>
+        </div>
+        <div class="question">
+          <p>3. اختر الفعل المناسب: He ____ to school yesterday.</p>
+          <label><input type="radio" name="q3" value="a" required /> go</label>
+          <label><input type="radio" name="q3" value="b" /> goes</label>
+          <label><input type="radio" name="q3" value="c" /> went</label>
+          <label><input type="radio" name="q3" value="d" /> going</label>
+        </div>
+        <div class="question">
+          <p>4. My brother and I ____ the movie last night.</p>
+          <label><input type="radio" name="q4" value="a" required /> watch</label>
+          <label><input type="radio" name="q4" value="b" /> watched</label>
+          <label><input type="radio" name="q4" value="c" /> watching</label>
+          <label><input type="radio" name="q4" value="d" /> to watch</label>
+        </div>
+        <div class="question">
+          <p>5. ما مرادف كلمة "Rapid"؟</p>
+          <label><input type="radio" name="q5" value="a" required /> سريع</label>
+          <label><input type="radio" name="q5" value="b" /> بطيء</label>
+          <label><input type="radio" name="q5" value="c" /> حذر</label>
+          <label><input type="radio" name="q5" value="d" /> صغير</label>
+        </div>
+        <div class="question">
+          <p>6. أكمل: The cat is ____ the table.</p>
+          <label><input type="radio" name="q6" value="a" required /> under</label>
+          <label><input type="radio" name="q6" value="b" /> between</label>
+          <label><input type="radio" name="q6" value="c" /> behind</label>
+          <label><input type="radio" name="q6" value="d" /> across</label>
+        </div>
+        <div class="question">
+          <p>7. إذا كان الجو ____ غداً، سنلغي النزهة.</p>
+          <label><input type="radio" name="q7" value="a" required /> يمطر</label>
+          <label><input type="radio" name="q7" value="b" /> تمطر</label>
+          <label><input type="radio" name="q7" value="c" /> raining</label>
+          <label><input type="radio" name="q7" value="d" /> rained</label>
+        </div>
+        <div class="question">
+          <p>8. اختر الترجمة الصحيحة لعبارة "العلم نور".</p>
+          <label><input type="radio" name="q8" value="a" required /> Science is light</label>
+          <label><input type="radio" name="q8" value="b" /> Science is heavy</label>
+          <label><input type="radio" name="q8" value="c" /> Science is tall</label>
+          <label><input type="radio" name="q8" value="d" /> Science is long</label>
+        </div>
+        <div class="question">
+          <p>9. أي من الكلمات التالية اسم (noun)؟</p>
+          <label><input type="radio" name="q9" value="a" required /> Run</label>
+          <label><input type="radio" name="q9" value="b" /> Running</label>
+          <label><input type="radio" name="q9" value="c" /> Runner</label>
+          <label><input type="radio" name="q9" value="d" /> Runs</label>
+        </div>
+        <div class="question">
+          <p>10. ما الجمع الصحيح لكلمة "Child"؟</p>
+          <label><input type="radio" name="q10" value="a" required /> Childs</label>
+          <label><input type="radio" name="q10" value="b" /> Childeren</label>
+          <label><input type="radio" name="q10" value="c" /> Children</label>
+          <label><input type="radio" name="q10" value="d" /> Childes</label>
+        </div>
+        <button type="submit" class="submit-btn">إرسال الإجابات</button>
+      </form>
+      <!-- نتيجة الاختبار -->
+      <div id="result" class="test-result">
+        <h2>نتيجة الاختبار</h2>
+        <p id="scoreOutput"></p>
+        <p id="recommendation"></p>
+        <div class="result-actions">
+          <a href="index.html#register">العودة للتسجيل</a>
+          <a href="https://t.me/Hilm_STEP1" target="_blank">تواصل مع المنسق</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      // تحديد الإجابات الصحيحة لكل سؤال
+      const correctAnswers = {
+        q1: "c", // مبتكر
+        q2: "c", // in
+        q3: "c", // went
+        q4: "b", // watched
+        q5: "a", // سريع
+        q6: "a", // under
+        q7: "a", // يمطر (rains)
+        q8: "a", // Science is light
+        q9: "c", // Runner
+        q10: "c" // Children
+      };
+
+      const form = document.getElementById("testForm");
+      const resultDiv = document.getElementById("result");
+      const scoreOutput = document.getElementById("scoreOutput");
+      const recommendation = document.getElementById("recommendation");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let score = 0;
+        // حساب الدرجات
+        Object.keys(correctAnswers).forEach((key) => {
+          const radios = form.elements[key];
+          for (const radio of radios) {
+            if (radio.checked && radio.value === correctAnswers[key]) {
+              score++;
+            }
+          }
+        });
+        // عرض النتيجة
+        scoreOutput.textContent = `لقد حصلت على ${score} من 10.`;
+        // توصية بناء على النتيجة
+        if (score <= 3) {
+          recommendation.textContent =
+            "مستواك مبتدئ. نوصي ببدء خطة شهرية أو خطة 3 أشهر مع التركيز على الأساسيات.";
+        } else if (score <= 7) {
+          recommendation.textContent =
+            "مستواك متوسط. نوصي بخطة أسبوع أو شهر مع التركيز على النماذج المكررة.";
+        } else {
+          recommendation.textContent =
+            "مستواك متقدم. نوصي بالخطة القصيرة (3 أيام أو أسبوع) للمراجعة والتركيز على نقاط الضعف البسيطة.";
+        }
+        // إظهار النتيجة وإخفاء النموذج
+        resultDiv.classList.add("active");
+        form.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
