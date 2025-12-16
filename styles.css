@@ -375,6 +375,80 @@ h2 {
   margin-top: 1rem;
 }
 
+/* قسم خطوات المذاكرة */
+.study-section {
+  margin-top: 3rem;
+}
+
+.tips-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.tips-list li {
+  margin: 0.4rem 0;
+  padding-right: 1.2rem;
+  position: relative;
+}
+
+.tips-list li::before {
+  content: "★";
+  color: var(--accent);
+  position: absolute;
+  right: 0;
+}
+
+/* قسم اختبار تحديد المستوى */
+.level-test-section {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.level-test-section .btn {
+  margin-top: 1rem;
+}
+
+/* صورة الإنفوغرافيك في قسم الإنجازات */
+.scores-image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 12px;
+  margin: 1rem auto;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* رابط قياس داخل قسم الدفع */
+.qiyas-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.qiyas-link a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.qiyas-link a:hover {
+  text-decoration: none;
+  color: var(--brand-1);
+}
+
+/* علامة مائية على الخلفية */
+body::after {
+  content: "STEP Academy";
+  position: fixed;
+  bottom: 20%;
+  left: 10%;
+  font-size: 8rem;
+  color: rgba(255, 255, 255, 0.03);
+  transform: rotate(-20deg);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .review-card {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
