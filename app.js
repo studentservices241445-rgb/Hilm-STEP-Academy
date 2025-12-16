@@ -200,7 +200,15 @@
       if (resourcesFiles !== "") {
         message += `مصادر مرفقة: ${resourcesFiles}\n`;
       }
-      message += "يرجى تحويل المبلغ إلى الحساب الموضح أعلاه ثم إرسال الإيصال.\n";
+      // إضافة بيانات التحويل بالتفصيل لطمأنة الطالب
+      message += "بيانات التحويل:\n";
+      message += `البنك: ${cfg.bank.bankName}\n`;
+      message += `اسم المستفيد: ${cfg.bank.beneficiary}\n`;
+      message += `رقم الحساب: ${cfg.bank.accountNumber}\n`;
+      message += `الآيبان: ${cfg.bank.iban}\n`;
+      // تنبيه حول الخطوات التالية للحصول على روابط الدورة
+      message +=
+        "بعد تحويل المبلغ وإرسال الإيصال سيتم تزويدكم بروابط الدورة في أقرب وقت ممكن.\n";
       message += "تم الإرسال من الموقع الرسمي.";
       return message;
     }
