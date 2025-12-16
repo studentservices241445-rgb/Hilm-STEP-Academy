@@ -18,14 +18,19 @@
     <header class="site-header">
       <div class="container nav-container">
         <a href="#hero" class="brand">STEP الشاملة الحديثة</a>
+        <!-- زر لعرض/إخفاء القائمة على الشاشات الصغيرة -->
+        <button class="menu-toggle" id="menuToggle" aria-label="عرض القائمة">☰ القائمة</button>
         <nav>
-          <ul class="nav-list">
+          <ul class="nav-list" id="navList">
             <li><a href="#about">عن الدورة</a></li>
             <li><a href="#content">محتوى الدورة</a></li>
             <li><a href="#payment">السعر والاشتراك</a></li>
             <li><a href="#study-tips">خطوات المذاكرة</a></li>
             <li><a href="#level-test">اختبار المستوى</a></li>
             <li><a href="#register">التسجيل</a></li>
+            <li><a href="#achievements">الإنجازات</a></li>
+            <li><a href="#resources-links">روابط مفيدة</a></li>
+            <li><a href="#contact-complaints">التواصل والشكاوى</a></li>
           </ul>
         </nav>
       </div>
@@ -139,7 +144,7 @@
             <div>
               <dt>رقم الحساب</dt>
               <dd>
-                <span id="accountNumber" class="mono" dir="ltr"></span>
+                <span id="accountNumber" class="mono bank-detail" dir="ltr"></span>
                 <button
                   class="copy-btn"
                   data-copy-target="#accountNumber"
@@ -152,7 +157,7 @@
             <div>
               <dt>رقم الآيبان</dt>
               <dd>
-                <span id="iban" class="mono" dir="ltr"></span>
+                <span id="iban" class="mono bank-detail" dir="ltr"></span>
                 <button
                   class="copy-btn"
                   data-copy-target="#iban"
@@ -208,17 +213,7 @@
             </div>
             <p class="warn">أي تحويل خارج هذه البيانات غير معتمد.</p>
 
-            <p class="qiyas-link">
-              للتسجيل الرسمي في اختبار STEP عبر موقع قياس، يرجى زيارة
-              <a
-                href="https://e-services.qiyas.sa/"
-                target="_blank"
-                rel="noopener"
-              >
-                نظام التسجيل على موقع قياس
-              </a>
-              .
-            </p>
+            <!-- تم إزالة رابط موقع قياس بطلب المستخدم -->
           </div>
         </div>
       </div>
@@ -252,13 +247,12 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="contactLink">رابط حساب التواصل:</label>
+          <label for="contactLink">رابط حساب التواصل <span class="optional">(اختياري)</span>:</label>
           <input
             type="text"
             id="contactLink"
             name="contactLink"
             placeholder="مثال: @Username أو +966123456789 أو name@example.com"
-            required
           />
         </div>
         <div class="form-group">
@@ -319,6 +313,18 @@
             rows="3"
             placeholder="اكتب أي معلومات إضافية هنا..."
           ></textarea>
+        </div>
+
+        <!-- خانة لإرفاق مصادر مفيدة لدعم الطلاب (اختياري) -->
+        <div class="form-group">
+          <label for="resourcesUpload">أرفق مصادر مفيدة <span class="optional">(اختياري)</span>:</label>
+          <input
+            type="file"
+            id="resourcesUpload"
+            name="resourcesUpload"
+            multiple
+          />
+          <small class="note">يمكنك اختيار ملفات أو روابط لمصادر تريد مشاركتها، وسيتم ذكر أسمائها في الرسالة المرسلة.</small>
         </div>
         <div class="form-group button-group">
           <button type="button" id="sendBtn" class="btn primary">
@@ -442,6 +448,54 @@
         <span class="count" id="subscriberCount">0</span>
         <span class="label">مشترك مسجل حتى الآن</span>
       </div>
+    </section>
+
+    <!-- قسم التواصل والشكاوى -->
+    <section id="contact-complaints" class="contact-section container">
+      <h2>التواصل والشكاوى</h2>
+      <p>
+        نسعد بتلقي استفساراتكم وملاحظاتكم واقتراحاتكم حول الدورة. نحن هنا
+        لطمأنة المشتركين ومعالجة أي شكاوى بأسرع وقت وبأسلوب سعودي محترم.
+      </p>
+      <p>
+        للتواصل: يمكنكم مراسلتنا عبر البريد الإلكتروني
+        <a href="mailto:studentservices241445@gmail.com" target="_blank">studentservices241445@gmail.com</a>
+        أو عبر حساب المنسق على تيليجرام
+        <a href="https://t.me/Hilm_STEP1" target="_blank" rel="noopener">@Hilm_STEP1</a>.
+      </p>
+      <p>
+        نحرص على الرد على جميع الرسائل بلهجة سعودية ودية، ونقدر ثقتكم بنا.
+      </p>
+    </section>
+
+    <!-- قسم الروابط المفيدة -->
+    <section id="resources-links" class="resources-links-section container">
+      <h2>روابط مفيدة</h2>
+      <p>
+        يمكنكم متابعة القناة الرسمية للدورة عبر تيليجرام لمعرفة آخر الأخبار
+        والمستجدات:
+      </p>
+      <p>
+        <a
+          href="https://t.me/stepp2024"
+          class="btn primary"
+          target="_blank"
+          rel="noopener"
+          >القناة الرسمية للدورة</a
+        >
+      </p>
+      <p>
+        كما نوفر فهرساً للمصادر المجانية المفيدة في التحضير لاختبار STEP:
+      </p>
+      <p>
+        <a
+          href="https://t.me/stepp2024/300"
+          class="btn secondary"
+          target="_blank"
+          rel="noopener"
+          >فهرس المصادر المجانية</a
+        >
+      </p>
     </section>
 
     <!-- حاوية الإشعارات المنبثقة -->
